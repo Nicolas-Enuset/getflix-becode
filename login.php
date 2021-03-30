@@ -31,7 +31,7 @@
             <input type="text" id="usernameLogin" class="usernameLogin">
         <label for="passwordLogin">Password</label>
             <input type="password" id="passwordLogin" class="passwordLogin">
-        <button type="submit" class="btnSignIn">Sign in</button>
+        <button type="submit" class="btnSignIn">Login</button>
     </form>
 </section>
 <!-- footer -->
