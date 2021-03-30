@@ -5,7 +5,7 @@
 </head>
 
 <!-- body -->
-<body>
+<body id="bodyCategory">
 
 <!-- Nav Bar -->
 <?php 

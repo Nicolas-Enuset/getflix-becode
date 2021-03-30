@@ -3,7 +3,7 @@
 ?>
 <title>sign up</title>
 </head>
-<body>
+<body id="bodySignup">
 
 <!-- nav Bar -->
 <header id="nav_bar">

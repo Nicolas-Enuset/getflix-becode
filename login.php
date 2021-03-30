@@ -5,12 +5,12 @@
 </head>
 
 <!-- body -->
-<body>
+<body id="bodyLogin">
 
 <!-- nav Bar -->
-<header id="nav_bar">
+<header>
     <h1>Getflix</h1>
-    <nav>
+    <nav id="nav_bar">
         <ul>
             <li>
                 <a href="signUp.php">
@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li>
-                <a href="signUp.php">Not registered yet? click here to sign up</a>
+                <a href="signUp.php">sign up here!</a>
             </li>
         </ul>
     </nav>

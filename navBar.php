@@ -1,5 +1,5 @@
-<header id="nav_bar">
-    <nav>
+<header>
+    <nav id="nav_bar">
         <ul>
             <li>
                 <a href="mainPage.php">

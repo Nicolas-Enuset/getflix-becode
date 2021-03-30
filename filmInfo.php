@@ -5,7 +5,7 @@
 </head>
 
 <!-- body -->
-<body>
+<body id="bodyFilmInfo">
 
 <!-- Nav Bar -->
 <?php 
@@ -18,8 +18,8 @@
         <img src=".jpeg" alt="essai">
     </section>
     <section class="topInfo">
-        <p><span>actors</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis numquam ullam asperiores veritatis nobis illo!</p>
-        <p><span>release date</span> 23/03/2021</p>
+        <p><strong>actors</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis numquam ullam asperiores veritatis nobis illo!</p>
+        <p><strong>release date</strong> 23/03/2021</p>
     </section>
     <section class="synopsis">
         <h4>summary</h4>
