@@ -3,7 +3,7 @@
         <ul>
             <li>
                 <a href="mainPage.php">
-                    <img src="pictures/logo.pnj.png" alt="logo">
+                    <img class="imgLogo" src="pictures/logo.pnj.png" alt="logo">
                 </a>
             </li>
             <li>    
