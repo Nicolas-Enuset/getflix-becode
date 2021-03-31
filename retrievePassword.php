@@ -4,7 +4,7 @@
 <title>retrieve password</title>
 
 <!-- body -->
-<body>
+<body id="bodyRetrievePassword">
 
 <!-- Nav Bar -->
 <?php 
