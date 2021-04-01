@@ -14,7 +14,7 @@
         <ul>
             <li>
                 <a href="mainPage.php">
-                    <img src="pictures/logo.pnj.png" alt="logo">
+                    <img src="pictures/logoTransparentWhite.png" alt="logo">
                 </a>
             </li>
             <li>
@@ -40,14 +40,156 @@
         </ul>
     </nav>
 </header>
+<!--Carrousel 1-->
 
->>>>>>> 012da4c6da9e8d6fda19b3a5240b119c884995a4
+<div class="categoryList">
+    <div class="categoryItem">
+        <div  id="carousel1" class="carousel slide  h-100" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active ">
+                    <img class="img-fluid w-100" src="" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titre 1</h5>
+                        <p>Blablablablablablabla</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="img-fluid w-100" src="" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titre 2</h5>
+                        <p>Blablablablablablabla</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="img-fluid w-100" src="" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titre 3</h5>
+                        <p>Blablablablablablabla</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+    
+        </div>
+            <div class="categoryDescription">
+                <h2>Most popular movies</h2>
+            </div>
+    </div>
+
+    <!--Carrousel 2-->
+    <div class="categoryItem reversed">
+        <div  id="carousel2" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel2" data-slide-to="1"></li>
+                <li data-target="#carousel2" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="Images/Galerie/WPetit.jpg" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titre 1</h5>
+                        <p>Blablablablablablabla</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titre 2</h5>
+                        <p>Blablablablablablabla</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="Images/Contact.jpg" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titre 3</h5>
+                        <p>Blablablablablablabla</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+    
+        </div>
+        <div class="categoryDescription">
+            <h2>Most popular series</h2>
+        </div>
+    </div>
+    <!--Carrousel 3-->
+    <div class="categoryItem">
+        <div  id="carousel3" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel3" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel3" data-slide-to="1"></li>
+                <li data-target="#carousel3" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="Images/Galerie/WPetit.jpg" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titre 1</h5>
+                        <p>Blablablablablablabla</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="Images/Galerie/benjamin-wedemeyer-fwafgljc0f0-unsplash.jpg" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titre 2</h5>
+                        <p>Blablablablablablabla</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="Images/Contact.jpg" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titre 3</h5>
+                        <p>Blablablablablablabla</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel3" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+    
+        </div>
+        <div class="categoryDescription">
+            <h2>Action movies</h2>
+        </div>
+    </div>
+</div>
+
+
+<!--class="bg-dark"-->
+
+
 <!-- footer -->
 <?php 
     include("footer.php")
 ?>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
