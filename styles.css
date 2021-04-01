@@ -1,5 +1,4 @@
 body {
-  background-color: lightgrey;
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
   padding: 0;
@@ -10,6 +9,9 @@ body {
 
 #container {
   flex: 1 0 auto;
+}
+#bodyMainPage {
+  background-color: black;
 }
 
 h1 {
@@ -226,6 +228,74 @@ form {
 
 /* sign up */
 
+#bodySignup {
+  background-image: url(pictures/erik-witsoe-GF8VvBgcJ4o-unsplash-1.jpg);
+  background-position: center;
+}
+
+#formSignUp {
+  width: 30%;
+  margin: 60px 0 0px 50%;
+  transform: translateX(-50%);
+  background-color: rgba(102, 102, 102, 0.3);
+}
+
+#titlesSignUp {
+  padding-top: 50px;
+  color: white;
+  text-align: center;
+}
+
+#lastNameSignUp {
+  color: rgba(227, 206, 161);
+  background-color: rgba(84, 84, 83);
+  border-radius: 5px;
+}
+
+#firstNameSignUp {
+  color: rgba(227, 206, 161);
+  background-color: rgba(150, 150, 150);
+  border-radius: 5px;
+}
+
+#usernameSignUp {
+  color: rgba(227, 206, 161);
+  background-color: rgba(84, 84, 83);
+  border-radius: 5px;
+}
+
+#passwordSignUp {
+  color: rgba(227, 206, 161);
+  background-color: rgba(84, 84, 83);
+  border-radius: 5px;
+}
+
+#emailSignUp {
+  color: rgba(227, 206, 161);
+  background-color: rgba(150, 150, 150);
+  border-radius: 5px;
+}
+
+#paragraphSignUpConfirmPw {
+  color: white;
+  text-align: center;
+}
+
+#labelSubscribeNewsletter {
+  padding-top: 25px;
+  color: white;
+  text-align: center;
+}
+
+#btnSignUp {
+  color: black;
+  background-color: rgba();
+  margin-top: 50px;
+  margin-bottom: 25px;
+  width: 225px;
+  border-radius: 5px;
+}
+
 /* category */
 
 /* film info */
@@ -243,12 +313,49 @@ form {
 
 /* login */
 
+#bodyLogin {
+  background-image: url(pictures/erik-witsoe-GF8VvBgcJ4o-unsplash-1.jpg);
+  background-position: center;
+}
+
 #formLogin {
   width: 30%;
   margin: 60px 0 0px 50%;
   transform: translateX(-50%);
-  background-color: whitesmoke;
-  padding: 40px;
+  background-color: rgba(102, 102, 102, 0.3);
+}
+
+#h2Login {
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#usernameLogin {
+  color: rgba(227, 206, 161);
+  background-color: rgba(84, 84, 83);
+  border-radius: 5px;
+}
+
+#passwordLogin {
+  color: rgba(227, 206, 161);
+  background-color: rgba(150, 150, 150);
+  border-radius: 5px;
+}
+
+#btnSignIn {
+  color: black;
+  background-color: rgba();
+  margin-top: 70px;
+  margin-bottom: 25px;
+  width: 225px;
+  border-radius: 5px;
+}
+
+#paragraphNoAccountYet {
+  color: white;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
 /* Main page */
@@ -258,6 +365,33 @@ form {
   flex-direction: column;
 }
 
+/* Englobe tous les carrousels */
+.categoryList {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Englobe chaque carrousel individuellement */
+.categoryItem {
+  /*height: 200px;*/
+  background: linear-gradient(
+    black 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    black 100%
+  );
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.categoryDescription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 /* retrieve password */
 
 #formRetrievePassword {
