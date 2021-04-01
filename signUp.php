@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="login.php">Already registered? Login!</a>
+                    <a href="login.php">Already registered? Login</a>
                 </li>
             </ul>
         </nav>

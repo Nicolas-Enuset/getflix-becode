@@ -21,22 +21,21 @@
             <li>
                 <button class="btnCategory">Category</button>
                 <section class="selectionMenu">
-                    <!-- je dois mettre une -->
-                    <a href="http://localhost/projets/PHP/Getflix/category.php"><button class="action" value="action">action</button></a>
-                    <a href="http://localhost/projets/PHP/Getflix/category.php"><button class="thriller" value="thriller">thriller</button></a>
-                    <a href="http://localhost/projets/PHP/Getflix/category.php"><button class="comedy" value="comedy">comedy</button></a>
-                    <a href="http://localhost/projets/PHP/Getflix/category.php"><button class="sci-fi" value="sci-fi">sci-fi</button></a>
-                    <a href="http://localhost/projets/PHP/Getflix/category.php"><button class="drama" value="drama">drama</button></a>
+                    <button class="action" value="action">action</button>
+                    <button class="thriller" value="thriller">thriller</button>
+                    <button class="comedy" value="comedy">comedy</button>
+                    <button class="sci-fi" value="sci-fi">sci-fi</button>
+                    <button class="drama" value="drama">drama</button>
                 </section>
             </li>
             <li>    
                 <form action="" method="POST">
                     <input type="text" id="searchFilm" class="searchFilm">
-                    <button type="submit" class="btnSearch">search</button>
+                    <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
                 </form>
             </li>
             <li>
-                <a href="login.php">Log out!</a>
+                <a href="login.php">Log out</a>
             </li>
         </ul>
     </nav>

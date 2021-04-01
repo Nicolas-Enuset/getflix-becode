@@ -13,15 +13,21 @@ body {
 }
 
 h1 {
+  margin: 0;
+  padding-bottom: 40px;
   text-align: center;
   font-family: none;
   font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: #3d3d3d;
 }
 
 /* style du nav bar */
-
+/**$$$ a pimper!!! si temps */
 #nav_bar {
   width: 100%;
+  background-color: #3d3d3d;
   margin: 0;
 }
 
@@ -33,11 +39,122 @@ header ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   list-style-type: none;
 }
 
 header ul li {
   padding: 10px;
+  border-radius: 10px;
+  height: 100%;
+  margin: 0;
+}
+
+#searchFilm {
+  padding: 5px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+}
+
+#searchFilm:focus {
+  outline: none;
+}
+
+header button {
+  background: none;
+  border: none;
+}
+
+header i {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+header .btnSearch:hover i {
+  transition: 0.3s;
+  transform: rotateZ(30deg);
+  margin: 0px;
+  font-size: 35px;
+  color: rgba(255, 119, 119, 0.9);
+}
+
+header li:nth-child(3) a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: rgba(255, 119, 119, 0.9);
+}
+
+/* nav bar login */
+
+#bodyLogin header li:nth-child(2) a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: rgba(255, 119, 119, 0.9);
+}
+
+/* nav bar main page */
+
+/** a pimper!!! si temps */
+
+.btnCategory {
+  border: 2px solid rgba(255, 119, 119, 0.2);
+  background-color: rgba(0, 0, 0, 0.253);
+  color: whitesmoke;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.btnCategory:hover {
+  border: 2px solid rgba(255, 119, 119, 0.9);
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.5s;
+}
+
+#bodyMainPage .selectionMenu {
+  position: absolute;
+  border-radius: 10px;
+}
+
+#bodyMainPage .selectionMenu button {
+  padding: 6px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: white;
+  background-color: rgba(255, 119, 119, 0.9);
+  border-bottom: 1px solid whitesmoke;
+}
+
+/* nav bar search film */
+
+#bodySearchFilm header li:nth-child(2) a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: rgba(255, 119, 119, 0.9);
+}
+
+/* nav bar login */
+
+#bodySignup header li:nth-child(2) a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: rgba(255, 119, 119, 0.9);
 }
 
 /* style du footer */
@@ -47,19 +164,56 @@ footer {
 }
 
 footer ul {
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   list-style-type: none;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+footer ul li {
+  margin: 0 20px;
+}
+
+footer a,
+li {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+}
+
+footer i {
+  font-size: 2rem;
+}
+
+footer li:nth-child(3) a:hover i {
+  color: #8482fe;
+}
+
+footer li:nth-child(4) a:hover i {
+  background-image: radial-gradient(
+    farthest-corner at 10% 100%,
+    #ffa72e,
+    #ff2b0c,
+    #ff5fe3,
+    #791bff
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 /* taille image */
 
 header .imgNavbar {
   height: 70px;
+  border-radius: 20px 0 20px 0;
+}
+
+header .imgNavbar:hover {
+  box-shadow: 0px 0px 5px rgba(255, 119, 119, 0.9);
 }
 
 /* forms */
@@ -158,7 +312,8 @@ form {
     grid-template-rows: auto auto;
   }
 
-  #bodyLogin ul img {
+  #bodyLogin,
+  #bodySignup ul img {
     height: 150px;
   }
 
