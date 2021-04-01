@@ -15,7 +15,7 @@
             <ul>
                 <li>
                     <a href="mainPage.php">
-                        <img src="pictures/logo.pnj.png" alt="logo" class="imgNavbar">
+                        <img src="pictures/logo.png" alt="logo" class="imgNavbar">
                     </a>
                 </li>
                 <li>
