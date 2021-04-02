@@ -7,33 +7,37 @@
 <!-- body -->
 <body id="bodyLogin">
 
-<!-- nav Bar -->
-<header>
-    <h1>Getflix</h1>
-    <nav id="nav_bar">
-        <ul>
-            <li>
-                <a href="signUp.php">
-                    <img src="pictures/logo.pnj.png" alt="logo">
-                </a>
-            </li>
-            <li>
-                <a href="signUp.php">sign up here!</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+<!-- container pour a chaque fois garder le footer en bas de page -->
+<article id="container">
 
-<!-- form login -->
-<section id="formLogin">
-    <form action="" method="POST">
-        <label for="usernameLogin">Username</label>
-            <input type="text" id="usernameLogin" class="usernameLogin">
-        <label for="passwordLogin">Password</label>
-            <input type="password" id="passwordLogin" class="passwordLogin">
-        <button type="submit" class="btnSignIn">Login</button>
-    </form>
-</section>
+<!-- nav Bar -->
+    <header>
+        <nav id="nav_bar">
+            <ul>
+                <li>
+                    <a href="signUp.php">
+                        <img src="pictures/logo.png" alt="logo" class="imgNavbar">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- form login -->
+    <section id="formLogin">
+        <h2 id="h2Login">Login</h2>
+        <form action="" method="POST">
+            <label for="usernameLogin"></label>
+                <input type="text" id="usernameLogin" placeholder="pseudo" class="usernameLogin">
+            <label for="passwordLogin"></label>
+                <input type="password" id="passwordLogin" placeholder="password" class="passwordLogin">
+            <button type="submit" id="btnSignIn">Login</button>
+        </form>
+        <p id="paragraphNoAccountYet">You don't have an account yet ? <a id="linkToSignUpPage" href="signUp.php">Sign up here.</a> </p>
+    </section>
+
+</article>
+
 <!-- footer -->
 <?php 
     include("footer.php")
