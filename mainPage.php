@@ -20,14 +20,17 @@
                 </a>
             </li>
             <li>
-                <button class="btnCategory">Category</button>
-                <section class="selectionMenu">
-                    <button class="action" value="action">action</button>
-                    <button class="thriller" value="thriller">thriller</button>
-                    <button class="comedy" value="comedy">comedy</button>
-                    <button class="sci-fi" value="sci-fi">sci-fi</button>
-                    <button class="drama" value="drama">drama</button>
-                </section>
+                <div class="btnCategory">Category</div>
+                <ul class="selectionMenu">
+                    <li><a href="category/action.php">action</a></li>
+                    <li><a href="category/animation.php">animation</a></li>
+                    <li><a href="category/crime.php">crime</a></li>
+                    <li><a href="category/dramatic.php">dramatic</a></li>
+                    <li><a href="category/fantasy.php">fantasy</a></li>
+                    <li><a href="category/horror.php">horror</a></li>
+                    <li><a href="category/science-fiction.php">Sci-fi</a></li>
+                    <li><a href="category/thriller.php">thriller</a></li>
+                </ul>
             </li>
             <li>    
                 <form action="" method="POST">
