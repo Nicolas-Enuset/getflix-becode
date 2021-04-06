@@ -188,6 +188,11 @@ li {
   color: white;
 }
 
+footer li:nth-child(2) a:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 footer i {
   font-size: 2rem;
 }
@@ -228,6 +233,9 @@ form {
   align-items: center;
 }
 
+input:focus {
+  outline: none;
+}
 /* sign up */
 
 #bodySignup {
@@ -237,12 +245,12 @@ form {
 
 #formSignUp {
   width: 30%;
-  margin: 60px 0 0px 50%;
+  margin: 60px 0 60px 50%;
   transform: translateX(-50%);
   background-color: rgba(102, 102, 102, 0.3);
 }
 
-#h2SignUp {
+#formSignUp h2 {
   padding-top: 50px;
   color: white;
   text-align: center;
@@ -310,6 +318,13 @@ form {
 
 /* category */
 
+#bodyCategory h3 {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
 /* film info */
 
 #filmInfo {
@@ -358,7 +373,7 @@ form {
 #btnSignIn {
   color: black;
   background-color: rgba();
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 25px;
   width: 225px;
   border-radius: 5px;
@@ -424,7 +439,6 @@ form {
   color: white;
   text-align: center;
   border-bottom: 1px solid white;
-  
 }
 
 hr {
@@ -450,9 +464,6 @@ hr {
   width: 225px;
   border-radius: 5px;
 }
-
-
-
 
 /* search film */
 
@@ -584,6 +595,10 @@ hr {
     grid-row: 2 / 3;
   }
 
+  #bodyMainPage li:nth-child(3) input {
+    width: 80%;
+  }
+
   #bodyMainPage li:nth-child(4) {
     grid-column: 2 / 3;
     grid-row: 1;
@@ -599,11 +614,11 @@ hr {
   #formLogin {
     width: 500px;
   }
-  
+
   #usernameLogin {
     width: 200px;
   }
-  
+
   #passwordLogin {
     width: 200px;
   }
@@ -612,7 +627,7 @@ hr {
     width: 200px;
   }
 
-  #formSignUp{
+  #formSignUp {
     width: 500px;
   }
 
@@ -647,11 +662,11 @@ hr {
   }
 
   #emailRetrievePassword {
-    width: 200px
+    width: 200px;
   }
 
   #btnRetrievePW {
-    width: 200px
+    width: 200px;
   }
 }
 
@@ -661,11 +676,11 @@ hr {
   #formLogin {
     width: 250px;
   }
-  
+
   #usernameLogin {
     width: 200px;
   }
-  
+
   #passwordLogin {
     width: 200px;
   }
@@ -674,7 +689,7 @@ hr {
     width: 200px;
   }
 
-  #formSignUp{
+  #formSignUp {
     width: 250px;
   }
 
@@ -701,8 +716,6 @@ hr {
   }
 
   #formRetrievePassword {
-    width: 250px
+    width: 250px;
   }
-
-
 }

@@ -11,19 +11,22 @@
 
 <!-- nav Bar -->
     <header id="nav_bar">
-        <h1></h1>
         <nav>
             <ul>
                 <li>
                     <a href="mainPage.php">
-                        <img id="logoSignUpPage" src="pictures/logo.png" alt="logo" class="imgNavbar">
+                        <img src="pictures/logo.png" alt="logo" class="imgNavbar">
                     </a>
+                </li>
+                <li>
+                    <a href="login.php">Already registered? Login</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <section id="formSignUp">
-            <h2 id="h2SignUp">Sign up</h2>
+            <h2>Sign up</h2>
     <!-- Form sign up -->
         <form action="" method="POST">
             <label for="lastNameSignUp" ></label>
@@ -39,36 +42,11 @@
             <label for="passwordSignUp" ></label>
             <p id="signUpConfirmPw">Confirm password :</p>
                 <input placeholder="Password" type="password" id="passwordSignUp" class="passwordSignUp">
-            <p id="labelSubscribeNewsletter">Subscribe to our newsletter</p>
-            <label for="subscribeSignUp" id="labelSubscribeNewsletter"></label>
+            <label for="subscribeSignUp" id="labelSubscribeNewsletter">Subscribe to our newsletter? Check bellow then</label>
                 <input type="checkbox" id="checkboxSignUp" class="subscribeSignUp" value="check">
             <button type="submit" id="btnSignUp">Sign up</button>
         </form>
-        <p id="goBackToLogin"><a id="linkToSignUpPage" href="login.php">Go back.</a> </p>
     </section>
-
-    <!-- <section id="form_sign_up"> -->
-    <!-- Form sign up -->
-        <!-- <form action="" method="POST">
-            <label for="lastNameSignUp">Last name</label>
-                <input type="text" id="lastNameSignUp" class="lastNameSignup">
-            <label for="firstNameSignUp">First name</label>
-                <input type="text" id="firstNameSignUp" class="firstNameSignUp">
-            <label for="usernameSignUp">Username</label>
-                <input type="text" id="usernameSignUp" class="usernameSignUp">
-            <label for="emailSignUp">Email</label>
-                <input type="email" id="emailSignUp" class="emailSignUp">
-            <label for="passwordSignUp">Password</label>
-                <input type="password" id="passwordSignUp" class="passwordSignUp">
-            <label for="passwordSignUp">Confirm password</label>
-                <input type="password" id="passwordSignUp" class="passwordSignUp">
-            <label for="subscribeSignUp">Subscribe to our newsletter</label>
-                <input type="checkbox" id="subscribeSignUp" class="subscribeSignUp" value="check">
-            <button type="submit" class="btnSignUp">Sign up</button>
-        </form>
-    </section>
-</article> -->
-<!-- footer -->
 <?php 
     include("footer.php")
 ?>
