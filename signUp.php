@@ -11,25 +11,19 @@
 
 <!-- nav Bar -->
     <header id="nav_bar">
-        <h1>Getflix</h1>
+        <h1></h1>
         <nav>
             <ul>
                 <li>
                     <a href="mainPage.php">
-                        <img src="pictures/logo.png" alt="logo" class="imgNavbar">
+                        <img id="logoSignUpPage" src="pictures/logo.png" alt="logo" class="imgNavbar">
                     </a>
-                </li>
-                <li>
-                    <a href="login.php">Already registered? Login</a>
-                </li>
             </ul>
         </nav>
     </header>
 
     <section id="formSignUp">
-        <div id="titlesSignUp">
-            <h2>Sign up</h2>
-        </div>
+            <h2 id="h2SignUp">Sign up</h2>
     <!-- Form sign up -->
         <form action="" method="POST">
             <label for="lastNameSignUp" ></label>
@@ -50,6 +44,7 @@
                 <input type="checkbox" id="checkboxSignUp" class="subscribeSignUp" value="check">
             <button type="submit" id="btnSignUp">Sign up</button>
         </form>
+        <p id="goBackToLogin"><a id="linkToSignUpPage" href="login.php">Go back.</a> </p>
     </section>
 
     <!-- <section id="form_sign_up"> -->

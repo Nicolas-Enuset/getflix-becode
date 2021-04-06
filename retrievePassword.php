@@ -10,19 +10,26 @@
 <article id="container">
 
     <!-- Nav Bar -->
-    <?php 
-        include("navBar.php")
-    ?>
+    <header>
+        <nav id="nav_bar">
+            <ul>
+                <li>
+                    <a href="signUp.php">
+                        <img src="pictures/logo.png" alt="logo" class="imgNavbar">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- form retrieve password -->
     <section id="formRetrievePassword">
-        <h2>Reset password</h2>
-        <hr/>
-            <p>Please enter your email address to search for your account.</p>
+            <h2 id="h2RetrievePW">Reset password</h2>
+            <p id="instructionPrgrph">Please enter your email address to search for your account.</p>
             <form action="" method="POST">
-                <label for="emailRetrievePassword">Email</label>
-                    <input type="email" id="emailRetrievePassword" class="emailRetrievePassword">
-                <button type="submit" class="btnRetrievePassword">Ok</button>
+                <label for="emailRetrievePassword"></label>
+                    <input placeholder="Email" type="email" id="emailRetrievePassword" class="emailRetrievePassword">
+                <button type="submit" class="btnRetrievePassword" id="btnRetrievePW">Send</button>
             </form>
     </section>
 
