@@ -79,9 +79,17 @@ header .btnSearch:hover i {
   color: rgba(255, 119, 119, 0.9);
 }
 
-header li:nth-child(3) a {
+#bodyCategory header li:nth-child(3) a {
   text-decoration: none;
-  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: rgba(255, 119, 119, 0.9);
+}
+
+.navInclude li:nth-child(3) a {
+  text-decoration: none;
   font-size: 1.2rem;
   font-weight: bolder;
   letter-spacing: 2px;
@@ -107,9 +115,11 @@ header li:nth-child(3) a {
 
 .btnCategory {
   border: 2px solid rgba(255, 119, 119, 0.2);
+  font-size: 1.2rem;
   background-color: rgba(0, 0, 0, 0.253);
   color: whitesmoke;
   padding: 10px 15px;
+  margin-bottom: 0;
   border-radius: 20px;
 }
 
@@ -120,17 +130,39 @@ header li:nth-child(3) a {
 }
 
 #bodyMainPage .selectionMenu li {
+  width: 100%;
+  text-align: center;
   padding: 6px;
   border-radius: 10px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8rem;
-  color: white;
-  background-color: rgba(255, 119, 119, 0.9);
+  background-color: rgba(255, 119, 119, 1);
   border-bottom: 1px solid whitesmoke;
 }
 
-#bodyMainPage header li:nth-child(4) a {
+.dropdown {
+  display: none;
+  position: relative;
+}
+
+.btnCategory:hover + .dropdown {
+  display: block;
+}
+
+.dropdown:hover {
+  display: block;
+}
+
+#bodyMainPage ul li:nth-child(2) ul {
+  position: absolute;
+}
+
+#bodyMainPage ul li:nth-child(2) a {
+  color: white;
+}
+
+#bodyMainPage .navLogout a {
   text-decoration: none;
   font-size: 1rem;
   font-weight: bolder;
@@ -439,10 +471,6 @@ input:focus {
   color: white;
   text-align: center;
   border-bottom: 1px solid white;
-}
-
-hr {
-  color: white;
 }
 
 #instructionPrgrph {
