@@ -14,7 +14,6 @@ session_start();
 
 <!-- nav Bar -->
     <header id="nav_bar">
-        <h1></h1>
         <nav>
             <ul>
                 <li>

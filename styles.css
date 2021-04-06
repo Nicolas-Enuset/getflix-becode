@@ -310,17 +310,8 @@ form {
 
 /* category */
 
-/* film info */
-
-#filmInfo {
-  width: 60%;
-  background-color: whitesmoke;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  padding: 15px;
-  margin-top: 80px;
-  margin-bottom: 80px;
+#bodyCategory {
+  background-color:#0f1121;
 }
 
 /* login */
@@ -456,12 +447,18 @@ hr {
 
 /* search film */
 
+#bodySearchFilm {
+  background-color:#0f1121;
+
+}
+
 #filmFound {
   width: 90%;
   margin-left: 50%;
   margin-top: 100px;
   transform: translateX(-50%);
-  background-color: whitesmoke;
+  background-color: rgba(102, 102, 102, 0.3);
+  color: white;
   text-align: center;
 }
 
