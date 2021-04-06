@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <?php 
     include("head.php")
 ?>
@@ -134,7 +137,7 @@
     
         </div>
         <div class="categoryDescription">
-            <h2>Most popular series</h2>
+            <h2>Top rated</h2>
         </div>
     </div>
     <!--Carrousel 3-->
@@ -179,7 +182,7 @@
     
         </div>
         <div class="categoryDescription">
-            <h2>Action movies</h2>
+            <h2>Upcoming movies</h2>
         </div>
     </div>
 </div>
