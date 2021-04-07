@@ -79,9 +79,17 @@ header .btnSearch:hover i {
   color: rgba(255, 119, 119, 0.9);
 }
 
-header li:nth-child(3) a {
+#bodyCategory header li:nth-child(3) a {
   text-decoration: none;
-  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: rgba(255, 119, 119, 0.9);
+}
+
+.navInclude li:nth-child(3) a {
+  text-decoration: none;
   font-size: 1.2rem;
   font-weight: bolder;
   letter-spacing: 2px;
@@ -107,9 +115,11 @@ header li:nth-child(3) a {
 
 .btnCategory {
   border: 2px solid rgba(255, 119, 119, 0.2);
+  font-size: 1.2rem;
   background-color: rgba(0, 0, 0, 0.253);
   color: whitesmoke;
   padding: 10px 15px;
+  margin-bottom: 0;
   border-radius: 20px;
 }
 
@@ -120,17 +130,39 @@ header li:nth-child(3) a {
 }
 
 #bodyMainPage .selectionMenu li {
+  width: 100%;
+  text-align: center;
   padding: 6px;
   border-radius: 10px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8rem;
-  color: white;
-  background-color: rgba(255, 119, 119, 0.9);
+  background-color: rgba(255, 119, 119, 1);
   border-bottom: 1px solid whitesmoke;
 }
 
-#bodyMainPage header li:nth-child(4) a {
+.dropdown {
+  display: none;
+  position: relative;
+}
+
+.btnCategory:hover + .dropdown {
+  display: block;
+}
+
+.dropdown:hover {
+  display: block;
+}
+
+#bodyMainPage ul li:nth-child(2) ul {
+  position: absolute;
+}
+
+#bodyMainPage ul li:nth-child(2) a {
+  color: white;
+}
+
+#bodyMainPage .navLogout a {
   text-decoration: none;
   font-size: 1rem;
   font-weight: bolder;
@@ -188,6 +220,11 @@ li {
   color: white;
 }
 
+footer li:nth-child(2) a:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 footer i {
   font-size: 2rem;
 }
@@ -228,6 +265,9 @@ form {
   align-items: center;
 }
 
+input:focus {
+  outline: none;
+}
 /* sign up */
 
 #bodySignup {
@@ -237,12 +277,12 @@ form {
 
 #formSignUp {
   width: 30%;
-  margin: 60px 0 0px 50%;
+  margin: 60px 0 60px 50%;
   transform: translateX(-50%);
   background-color: rgba(102, 102, 102, 0.3);
 }
 
-#h2SignUp {
+#formSignUp h2 {
   padding-top: 50px;
   color: white;
   text-align: center;
@@ -310,8 +350,18 @@ form {
 
 /* category */
 
-#bodyCategory {
-  background-color:#0f1121;
+#bodyCategory h3 {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  text-transform: uppercase;
+  background-color: #0f1121;
+  color: whitesmoke;
+}
+
+#bodyCategory,
+h3 {
+  background-color: #0f1121;
 }
 
 /* login */
@@ -349,7 +399,7 @@ form {
 #btnSignIn {
   color: black;
   background-color: rgba();
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 25px;
   width: 225px;
   border-radius: 5px;
@@ -415,11 +465,6 @@ form {
   color: white;
   text-align: center;
   border-bottom: 1px solid white;
-  
-}
-
-hr {
-  color: white;
 }
 
 #instructionPrgrph {
@@ -442,14 +487,10 @@ hr {
   border-radius: 5px;
 }
 
-
-
-
 /* search film */
 
 #bodySearchFilm {
-  background-color:#0f1121;
-
+  background-color: #0f1121;
 }
 
 #filmFound {
@@ -581,6 +622,10 @@ hr {
     grid-row: 2 / 3;
   }
 
+  #bodyMainPage li:nth-child(3) input {
+    width: 80%;
+  }
+
   #bodyMainPage li:nth-child(4) {
     grid-column: 2 / 3;
     grid-row: 1;
@@ -596,11 +641,11 @@ hr {
   #formLogin {
     width: 500px;
   }
-  
+
   #usernameLogin {
     width: 200px;
   }
-  
+
   #passwordLogin {
     width: 200px;
   }
@@ -609,7 +654,7 @@ hr {
     width: 200px;
   }
 
-  #formSignUp{
+  #formSignUp {
     width: 500px;
   }
 
@@ -644,11 +689,11 @@ hr {
   }
 
   #emailRetrievePassword {
-    width: 200px
+    width: 200px;
   }
 
   #btnRetrievePW {
-    width: 200px
+    width: 200px;
   }
 }
 
@@ -658,11 +703,11 @@ hr {
   #formLogin {
     width: 250px;
   }
-  
+
   #usernameLogin {
     width: 200px;
   }
-  
+
   #passwordLogin {
     width: 200px;
   }
@@ -671,7 +716,7 @@ hr {
     width: 200px;
   }
 
-  #formSignUp{
+  #formSignUp {
     width: 250px;
   }
 
@@ -698,8 +743,6 @@ hr {
   }
 
   #formRetrievePassword {
-    width: 250px
+    width: 250px;
   }
-
-
 }

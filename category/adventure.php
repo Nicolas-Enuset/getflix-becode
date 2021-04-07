@@ -4,7 +4,7 @@ session_start();
 <?php 
     include("../head.php")
 ?>
-<title>Animation</title>
+<title>apache_get_version</title>
 </head>
 
 <!-- body -->
@@ -36,7 +36,7 @@ session_start();
 </header>
 
     <section id="category">
-        <h3>Animation</h3>
+        <h3>Adventure</h3>
         <!-- films correspondant à la category qui seront display en flex-->
     </section>
 </article>

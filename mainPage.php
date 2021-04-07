@@ -22,18 +22,21 @@ session_start();
                     <img src="pictures/logo.png" alt="logo" class="imgNavbar">         
                 </a>
             </li>
-            <li>
-                <div class="btnCategory">Category</div>
-                <ul class="selectionMenu">
-                    <li><a href="category/action.php">action</a></li>
-                    <li><a href="category/animation.php">animation</a></li>
-                    <li><a href="category/crime.php">crime</a></li>
-                    <li><a href="category/dramatic.php">dramatic</a></li>
-                    <li><a href="category/fantasy.php">fantasy</a></li>
-                    <li><a href="category/horror.php">horror</a></li>
-                    <li><a href="category/science-fiction.php">Sci-fi</a></li>
-                    <li><a href="category/thriller.php">thriller</a></li>
-                </ul>
+            <li> 
+                <h4 class="btnCategory">Category</h4>
+                <div class="dropdown"> 
+                    <ul class="selectionMenu">
+                        <li><a href="category/action.php">action</a></li>
+                        <li><a href="category/adventure.php">adventure</a></li>
+                        <li><a href="category/animation.php">animation</a></li>
+                        <li><a href="category/crime.php">crime</a></li>
+                        <li><a href="category/dramatic.php">dramatic</a></li>
+                        <li><a href="category/fantasy.php">fantasy</a></li>
+                        <li><a href="category/horror.php">horror</a></li>
+                        <li><a href="category/science-fiction.php">Sci-fi</a></li>
+                        <li><a href="category/thriller.php">thriller</a></li>
+                    </ul>
+                </div>
             </li>
             <li>    
                 <form action="" method="POST">
@@ -41,7 +44,7 @@ session_start();
                     <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
                 </form>
             </li>
-            <li>
+            <li class="navLogout">
                 <a href="login.php">Log out</a>
             </li>
         </ul>
@@ -96,7 +99,7 @@ session_start();
     </div>
 
     <!--Carrousel 2-->
-    <div class="categoryItem reversed">
+    <div class="categoryItem">
         <div  id="carousel2" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel2" data-slide-to="0" class="active"></li>
