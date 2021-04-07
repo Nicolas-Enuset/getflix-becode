@@ -25,17 +25,17 @@ session_start();
             <li> 
                 <h4 class="btnCategory">Category</h4>
                 <div class="dropdown"> 
-                    <ul class="selectionMenu">
-                        <li><a href="category/action.php">action</a></li>
-                        <li><a href="category/adventure.php">adventure</a></li>
-                        <li><a href="category/animation.php">animation</a></li>
-                        <li><a href="category/crime.php">crime</a></li>
-                        <li><a href="category/dramatic.php">dramatic</a></li>
-                        <li><a href="category/fantasy.php">fantasy</a></li>
-                        <li><a href="category/horror.php">horror</a></li>
-                        <li><a href="category/science-fiction.php">Sci-fi</a></li>
-                        <li><a href="category/thriller.php">thriller</a></li>
-                    </ul>
+                    <section class="selectionMenu">
+                        <a href="category/action.php">action</a>
+                        <a href="category/adventure.php">adventure</a>
+                        <a href="category/animation.php">animation</a>
+                        <a href="category/crime.php">crime</a>
+                        <a href="category/dramatic.php">dramatic</a>
+                        <a href="category/fantasy.php">fantasy</a>
+                        <a href="category/horror.php">horror</a>
+                        <a href="category/science-fiction.php">Sci-fi</a>
+                        <a href="category/thriller.php">thriller</a>
+                    </section>
                 </div>
             </li>
             <li>    
