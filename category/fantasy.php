@@ -36,8 +36,53 @@ session_start();
 </header>
 
     <section id="category">
-        <h3>Fantasy</h3>
+        <h3>Family</h3>
         <!-- films correspondant à la category qui seront display en flex-->
+        <article class="action">
+        <?php
+        include '/Applications/MAMP/htdocs/getflix/connexion_getflix_db.php';
+        $records = mysqli_query($conn,"select * from getflix_movies where genre_id='10751'"); // fetch data from database
+        $i = 1;
+        while($data = mysqli_fetch_array($records))
+        {
+            $i++;
+        ?>
+        <div class="movieContainer">
+            <img src="<?php echo $data['movie_image']; ?>">
+<!-- Button trigger modal -->
+<button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
+   More Info
+</button>
+
+<!-- Modal -->
+<div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" 
+   aria-labelledby = "myModalLabel" aria-hidden = "true">
+   
+   <div class = "modal-dialog">
+      <div class = "modal-content">
+         <div class = "modal-header">
+            <h4 class = "modal-title" id = "myModalLabel">
+            <?php echo $data['title']; ?>
+            </h4>
+         </div>
+         <div class = "modal-body">
+            <?php echo $data['overview']; ?>
+         </div>
+         <div class = "modal-footer">
+            <?php echo $data['vote_average']; ?>/100
+         </div>
+         
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+  
+</div><!-- /.modal -->
+        </div>
+        
+        <?php
+        }
+        ?>
+</article>
+</section>
     </section>
 </article>
 <!-- footer -->
@@ -46,6 +91,9 @@ session_start();
 ?>
 
 <script src="../script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
