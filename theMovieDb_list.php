@@ -20,7 +20,7 @@
   <?php 
   
 $api_key = '1b49e96a9d4ee88a895f9eeda8a965d1';
-$api_url ='https://api.themoviedb.org/3/movie/popular?api_key='.$api_key.'&language=en-US&page=1';
+$api_url ='https://api.themoviedb.org/3/movie/popular?api_key='.$api_key.'&language=en-US&page=15';
 $img_url = "https://image.tmdb.org/t/p/w185//";
 
 $json_data = file_get_contents($api_url);
@@ -33,7 +33,7 @@ $results = $response_data['results'];
 foreach($results as $key => $value) 
 {
   $coma = "";
-          $things_to_replace = ["'",".",":"];
+  $things_to_replace = ["'",",",".",":","-"];
 ?>
   <tr>
     <form action="theMovieDb_form.php" method="post" enctype="multipart/form-data">

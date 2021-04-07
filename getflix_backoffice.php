@@ -24,7 +24,7 @@
 include '/Applications/MAMP/htdocs/getflix/connexion_getflix_db.php';
 
 
-$records = mysqli_query($db,"select * from getflix_movies"); // fetch data from database
+$records = mysqli_query($conn,"select * from getflix_movies"); // fetch data from database
 
 while($data = mysqli_fetch_array($records))
 {

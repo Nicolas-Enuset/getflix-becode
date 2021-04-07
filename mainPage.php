@@ -137,11 +137,6 @@
     <!--Carrousel 3-->
     <div class="categoryItem">
         <div  id="carousel3" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel3" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel3" data-slide-to="1"></li>
-                <li data-target="#carousel3" data-slide-to="2"></li>
-            </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="Images/Galerie/WPetit.jpg" alt="First slide">
@@ -173,7 +168,11 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-    
+            <ol class="carousel-indicators">
+                <li data-target="#carousel3" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel3" data-slide-to="1"></li>
+                <li data-target="#carousel3" data-slide-to="2"></li>
+            </ol>
         </div>
         <div class="categoryDescription">
             <h2>Action movies</h2>

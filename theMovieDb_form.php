@@ -22,7 +22,7 @@ include '/Applications/MAMP/htdocs/getflix/connexion_getflix_db.php';
 	
   if(mysqli_query($conn, $sql)){ 
 	  echo "<h3>Data sent! Thanks</h3>";
-      header("location:form_movie.php");
+      header("location:theMovieDb_list.php");
   } else{ 
 	  echo "ERROR: Hush! Sorry $sql. " 
 		  . mysqli_error($conn); 
