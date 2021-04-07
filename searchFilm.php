@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <?php 
     include("head.php")
 ?>
@@ -10,20 +13,9 @@
 <article id="container">
 
     <!-- Nav Bar -->
-    <header id="nav_bar">
-        <nav>
-            <ul>
-                <li>
-                    <a href="mainPage.php">
-                        <img src="pictures/logo.png" alt="logo" class="imgNavbar">
-                    </a>
-                </li>
-                <li>
-                    <a href="login.php">Log out</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<?php 
+include("navBar.php")
+?>
 
     <article id="filmFound">
         <section class="titleFound">

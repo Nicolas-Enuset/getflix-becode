@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <?php 
     include("head.php")
 ?>
@@ -19,15 +22,21 @@
                     <img src="pictures/logo.png" alt="logo" class="imgNavbar">         
                 </a>
             </li>
-            <li>
-                <button class="btnCategory">Category</button>
-                <section class="selectionMenu">
-                    <button class="action" value="action">action</button>
-                    <button class="thriller" value="thriller">thriller</button>
-                    <button class="comedy" value="comedy">comedy</button>
-                    <button class="sci-fi" value="sci-fi">sci-fi</button>
-                    <button class="drama" value="drama">drama</button>
-                </section>
+            <li> 
+                <h4 class="btnCategory">Category</h4>
+                <div class="dropdown"> 
+                    <ul class="selectionMenu">
+                        <li><a href="category/action.php">action</a></li>
+                        <li><a href="category/adventure.php">adventure</a></li>
+                        <li><a href="category/animation.php">animation</a></li>
+                        <li><a href="category/crime.php">crime</a></li>
+                        <li><a href="category/dramatic.php">dramatic</a></li>
+                        <li><a href="category/fantasy.php">fantasy</a></li>
+                        <li><a href="category/horror.php">horror</a></li>
+                        <li><a href="category/science-fiction.php">Sci-fi</a></li>
+                        <li><a href="category/thriller.php">thriller</a></li>
+                    </ul>
+                </div>
             </li>
             <li>    
                 <form action="" method="POST">
@@ -35,7 +44,7 @@
                     <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
                 </form>
             </li>
-            <li>
+            <li class="navLogout">
                 <a href="login.php">Log out</a>
             </li>
         </ul>
@@ -90,7 +99,7 @@
     </div>
 
     <!--Carrousel 2-->
-    <div class="categoryItem reversed">
+    <div class="categoryItem">
         <div  id="carousel2" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel2" data-slide-to="0" class="active"></li>
@@ -131,7 +140,7 @@
     
         </div>
         <div class="categoryDescription">
-            <h2>Most popular series</h2>
+            <h2>Top rated</h2>
         </div>
     </div>
     <!--Carrousel 3-->
@@ -175,7 +184,7 @@
             </ol>
         </div>
         <div class="categoryDescription">
-            <h2>Action movies</h2>
+            <h2>Upcoming movies</h2>
         </div>
     </div>
 </div>

@@ -69,21 +69,27 @@ header button {
 }
 
 header i {
-  margin-top: 10px;
   font-size: 25px;
+  margin-top: 10px;
 }
 
 header .btnSearch:hover i {
   transition: 0.3s;
-  transform: rotateZ(30deg);
-  margin: 0px;
-  font-size: 35px;
+  transform: rotateZ(30deg) scale(1.5);
   color: rgba(255, 119, 119, 0.9);
 }
 
-header li:nth-child(3) a {
+#bodyCategory header li:nth-child(3) a {
   text-decoration: none;
-  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: rgba(255, 119, 119, 0.9);
+}
+
+.navInclude li:nth-child(3) a {
+  text-decoration: none;
   font-size: 1.2rem;
   font-weight: bolder;
   letter-spacing: 2px;
@@ -109,9 +115,11 @@ header li:nth-child(3) a {
 
 .btnCategory {
   border: 2px solid rgba(255, 119, 119, 0.2);
+  font-size: 1.2rem;
   background-color: rgba(0, 0, 0, 0.253);
   color: whitesmoke;
   padding: 10px 15px;
+  margin-bottom: 0;
   border-radius: 20px;
 }
 
@@ -121,20 +129,46 @@ header li:nth-child(3) a {
   transition: all 0.5s;
 }
 
-#bodyMainPage .selectionMenu {
-  position: absolute;
-  border-radius: 10px;
-}
-
-#bodyMainPage .selectionMenu button {
+#bodyMainPage .selectionMenu li {
+  width: 100%;
+  text-align: center;
   padding: 6px;
   border-radius: 10px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8rem;
-  color: white;
-  background-color: rgba(255, 119, 119, 0.9);
+  background-color: rgba(255, 119, 119, 1);
   border-bottom: 1px solid whitesmoke;
+}
+
+.dropdown {
+  display: none;
+  position: relative;
+}
+
+.btnCategory:hover + .dropdown {
+  display: block;
+}
+
+.dropdown:hover {
+  display: block;
+}
+
+#bodyMainPage ul li:nth-child(2) ul {
+  position: absolute;
+}
+
+#bodyMainPage ul li:nth-child(2) a {
+  color: white;
+}
+
+#bodyMainPage .navLogout a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: rgba(255, 119, 119, 0.9);
 }
 
 /* nav bar search film */
@@ -186,6 +220,11 @@ li {
   color: white;
 }
 
+footer li:nth-child(2) a:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 footer i {
   font-size: 2rem;
 }
@@ -226,6 +265,9 @@ form {
   align-items: center;
 }
 
+input:focus {
+  outline: none;
+}
 /* sign up */
 
 #bodySignup {
@@ -235,12 +277,12 @@ form {
 
 #formSignUp {
   width: 30%;
-  margin: 60px 0 0px 50%;
+  margin: 60px 0 60px 50%;
   transform: translateX(-50%);
   background-color: rgba(102, 102, 102, 0.3);
 }
 
-#titlesSignUp {
+#formSignUp h2 {
   padding-top: 50px;
   color: white;
   text-align: center;
@@ -270,6 +312,11 @@ form {
   border-radius: 5px;
 }
 
+#signUpConfirmPw {
+  color: white;
+  text-align: center;
+}
+
 #emailSignUp {
   color: rgba(227, 206, 161);
   background-color: rgba(150, 150, 150);
@@ -296,19 +343,25 @@ form {
   border-radius: 5px;
 }
 
+#goBackToLogin {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
 /* category */
 
-/* film info */
-
-#filmInfo {
-  width: 60%;
-  background-color: whitesmoke;
-  margin-left: 50%;
-  transform: translateX(-50%);
+#bodyCategory h3 {
+  width: 100%;
   text-align: center;
-  padding: 15px;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  background-color: #0f1121;
+  color: whitesmoke;
+}
+
+#bodyCategory,
+h3 {
+  background-color: #0f1121;
 }
 
 /* login */
@@ -346,7 +399,7 @@ form {
 #btnSignIn {
   color: black;
   background-color: rgba();
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 25px;
   width: 225px;
   border-radius: 5px;
@@ -394,23 +447,59 @@ form {
 }
 /* retrieve password */
 
+#bodyRetrievePassword {
+  background-image: url(pictures/erik-witsoe-GF8VvBgcJ4o-unsplash-1.jpg);
+  background-position: center;
+}
+
 #formRetrievePassword {
-  width: 80%;
-  background-color: whitesmoke;
-  margin-left: 50%;
-  margin-top: 100px;
+  width: 30%;
+  margin: 60px 0 0px 50%;
   transform: translateX(-50%);
+  background-color: rgba(102, 102, 102, 0.3);
+}
+
+#h2RetrievePW {
+  padding-top: 50px;
+  padding-bottom: 5px;
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+#instructionPrgrph {
+  color: white;
   text-align: center;
 }
 
+#emailRetrievePassword {
+  color: rgba(227, 206, 161);
+  background-color: rgba(84, 84, 83);
+  border-radius: 5px;
+}
+
+#btnRetrievePW {
+  color: black;
+  background-color: rgba();
+  margin-top: 50px;
+  margin-bottom: 25px;
+  width: 225px;
+  border-radius: 5px;
+}
+
 /* search film */
+
+#bodySearchFilm {
+  background-color: #0f1121;
+}
 
 #filmFound {
   width: 90%;
   margin-left: 50%;
   margin-top: 100px;
   transform: translateX(-50%);
-  background-color: whitesmoke;
+  background-color: rgba(102, 102, 102, 0.3);
+  color: white;
   text-align: center;
 }
 /*Category styling */
@@ -435,16 +524,25 @@ form {
     grid-template-rows: auto auto;
   }
 
+  #bodyCategory li:nth-child(1),
   header li:nth-child(1) {
-    grid-column: 1 / 2;
+    grid-column: 1 /2;
     grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  #bodyCategory li:nth-child(2),
   header li:nth-child(2) {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  #bodyCategory li:nth-child(3),
   header li:nth-child(3) {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -453,12 +551,25 @@ form {
     align-items: center;
   }
 
+  #bodySignup header li:nth-child(1) {
+    grid-column: 1/3;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  #bodySignup header li:nth-child(2) {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    text-align: center;
+  }
+
   #bodyLogin ul {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
 
-  #bodyLogin,
+  #bodyLogin ul img,
+  #bodyRetrievePassword ul img,
   #bodySignup ul img {
     height: 150px;
   }
@@ -474,6 +585,27 @@ form {
     grid-row: 2 / 3;
     text-align: center;
   }
+
+  #bodySearchFilm header li:nth-child(2) {
+    grid-column: 1 / 3;
+    grid-row: 2/3;
+  }
+}
+
+#bodySignup header li:nth-child(1) {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bodyRetrievePassword header li:nth-child(1) {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 530px) {
@@ -502,11 +634,127 @@ form {
     grid-row: 2 / 3;
   }
 
+  #bodyMainPage li:nth-child(3) input {
+    width: 80%;
+  }
+
   #bodyMainPage li:nth-child(4) {
     grid-column: 2 / 3;
     grid-row: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+/* page login/signup et retrievePW moyen écran */
+
+@media screen and (max-width: 890px) {
+  #formLogin {
+    width: 500px;
+  }
+
+  #usernameLogin {
+    width: 200px;
+  }
+
+  #passwordLogin {
+    width: 200px;
+  }
+
+  #btnSignIn {
+    width: 200px;
+  }
+
+  #formSignUp {
+    width: 500px;
+  }
+
+  #lastNameSignUp {
+    width: 200px;
+  }
+
+  #firstNameSignUp {
+    width: 200px;
+  }
+  #usernameSignUp {
+    width: 200px;
+  }
+  #emailSignUp {
+    width: 200px;
+  }
+
+  #passwordSignUp {
+    width: 200px;
+  }
+
+  #btnSignUp {
+    width: 200px;
+  }
+
+  #logoSignUpPage {
+    justify-content: center;
+  }
+
+  #formRetrievePassword {
+    width: 500px;
+  }
+
+  #emailRetrievePassword {
+    width: 200px;
+  }
+
+  #btnRetrievePW {
+    width: 200px;
+  }
+}
+
+/* page login et signup petit écran */
+
+@media screen and (max-width: 550px) {
+  #formLogin {
+    width: 250px;
+  }
+
+  #usernameLogin {
+    width: 200px;
+  }
+
+  #passwordLogin {
+    width: 200px;
+  }
+
+  #btnSignIn {
+    width: 200px;
+  }
+
+  #formSignUp {
+    width: 250px;
+  }
+
+  #lastNameSignUp {
+    width: 200px;
+  }
+
+  #firstNameSignUp {
+    width: 200px;
+  }
+  #usernameSignUp {
+    width: 200px;
+  }
+  #emailSignUp {
+    width: 200px;
+  }
+
+  #passwordSignUp {
+    width: 200px;
+  }
+
+  #btnSignUp {
+    width: 200px;
+  }
+
+  #formRetrievePassword {
+    width: 250px;
   }
 }
