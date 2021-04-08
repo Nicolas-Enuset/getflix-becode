@@ -35,12 +35,12 @@ session_start();
     </nav>
 </header>
 
-    <section id="category">
+    <article id="category">
         <h3>Animation</h3>
         <!-- films correspondant à la category qui seront display en flex-->
-        <article class="action">
+        <section class="action">
         <?php
-        include '/Applications/MAMP/htdocs/getflix/connexion_getflix_db.php';
+        include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
         $records = mysqli_query($conn,"select * from getflix_movies where genre_id='16'"); // fetch data from database
         $i = 1;
         while($data = mysqli_fetch_array($records))
@@ -48,45 +48,45 @@ session_start();
             $i++;
         ?>
         <div class="movieContainer">
-            <img src="<?php echo $data['movie_image']; ?>">
-<!-- Button trigger modal -->
-<button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
-   More Info
-</button>
+            <div class="hover">
+                <img src="<?php echo $data['movie_image']; ?>">
+                <!-- Button trigger modal -->
+                <button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
+                More Info
+                </button>
+            </div>
 
-<!-- Modal -->
-<div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" 
-   aria-labelledby = "myModalLabel" aria-hidden = "true">
-   
-   <div class = "modal-dialog">
-      <div class = "modal-content">
-         <div class = "modal-header">
-            <h4 class = "modal-title" id = "myModalLabel">
-            <?php echo $data['title']; ?>
-            </h4>
-         </div>
-         <div class = "modal-body">
-            <?php echo $data['overview']; ?>
-         </div>
-         <div class = "modal-footer">
-            <?php echo $data['vote_average']; ?>/100
-         </div>
-         
-      </div><!-- /.modal-content -->
-   </div><!-- /.modal-dialog -->
-  
-</div><!-- /.modal -->
+            <!-- Modal -->
+            <div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" 
+            aria-labelledby = "myModalLabel" aria-hidden = "true">
+
+            <div class = "modal-dialog">
+                <div class = "modal-content">
+                    <div class = "modal-header">
+                        <h4 class = "modal-title" id = "myModalLabel">
+                        <?php echo $data['title']; ?>
+                        </h4>
+                    </div>
+                    <div class = "modal-body">
+                        <?php echo $data['overview']; ?>
+                    </div>
+                    <div class = "modal-footer">
+                        <?php echo $data['vote_average']; ?>/100
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+
+            </div><!-- /.modal -->
         </div>
         
         <?php
         }
         ?>
+        </section>
+    </article>
 </article>
-</section>
-    </section>
-</article>
-    </section>
-</article>
+
 <!-- footer -->
 <?php 
     include("../footer.php")

@@ -8,7 +8,7 @@ body {
 }
 
 body:not(#bodySignup, #bodyLogin) {
-  background: linear-gradient(#010031, #000);
+  background: linear-gradient(#141625, #000);
 }
 
 #container {
@@ -383,6 +383,32 @@ input:focus {
   text-transform: uppercase;
   color: whitesmoke;
 }
+
+.hover {
+  margin: 20px 0px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hover button {
+  margin-top: 10px;
+}
+
+.hover:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  transition: 0.5s;
+  box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.6);
+}
+
+#category {
+  margin: 0 20px;
+  width: 100%;
+}
 /* login */
 
 #bodyLogin {
@@ -443,6 +469,12 @@ input:focus {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.categoryList img {
+  height: 400px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Englobe chaque carrousel individuellement */
@@ -526,7 +558,6 @@ input:focus {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   grid-template-rows: auto;
-  
 }
 .movieContainer {
   display: grid;

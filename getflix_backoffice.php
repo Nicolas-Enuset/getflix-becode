@@ -21,7 +21,7 @@
   </tr>
 
 <?php
-include '/Applications/MAMP/htdocs/getflix/connexion_getflix_db.php';
+include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
 
 
 $records = mysqli_query($conn,"select * from getflix_movies"); // fetch data from database
