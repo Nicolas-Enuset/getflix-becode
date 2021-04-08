@@ -18,17 +18,30 @@ session_start();
     <nav id="nav_bar">
         <ul>
             <li>
-                <a href="mainPage.php">
+                <a href="../mainPage.php">
                     <img src="../pictures/logo.png" alt="logo" class="imgNavbar">
                 </a>
             </li>
-            <li>    
-                <form action="" method="POST">
-                    <input type="text" id="searchFilm" class="searchFilm">
-                    <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
-                </form>
+            <li> 
+                <h4 class="btnCategory">Category</h4>
+                    <div class="dropdown"> 
+                        <ul class="selectionMenu">
+                            <li><a href="action.php">action</a></li>
+                            <li><a href="adventure.php">adventure</a></li>
+                            <li><a href="animation.php">animation</a></li>
+                            <li><a href="crime.php">crime</a></li>
+                            <li><a href="dramatic.php">dramatic</a></li>
+                            <li><a href="fantasy.php">fantasy</a></li>
+                            <li><a href="horror.php">horror</a></li>
+                            <li><a href="science-fiction.php">Sci-fi</a></li>
+                            <li><a href="thriller.php">thriller</a></li>
+                        </ul>
+                    </div>
             </li>
-            <li>
+            <?php
+            include ("searchbar_cat_folder.php");
+            ?>
+            <li class="navLogout">
                 <a href="login.php">Log out</a>
             </li>
         </ul>
@@ -40,7 +53,7 @@ session_start();
         <!-- films correspondant à la category qui seront display en flex-->
         <article class="action">
         <?php
-        include '/Applications/MAMP/htdocs/getflix/connexion_getflix_db.php';
+        include '../../connexion_getflix_db.php';
         $records = mysqli_query($conn,"select * from getflix_movies where genre_id='28'"); // fetch data from database
         $i = 1;
         while($data = mysqli_fetch_array($records))
@@ -48,7 +61,7 @@ session_start();
             $i++;
         ?>
         <div class="movieContainer">
-            <img src="<?php echo $data['movie_image']; ?>">
+            <img src="../<?php echo $data['movie_image']; ?>">
 <!-- Button trigger modal -->
 <button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
    More Info
