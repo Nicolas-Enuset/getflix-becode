@@ -2,7 +2,8 @@
 session_start();
 ?>
 <?php 
-    include("head.php")
+    include "head.php";
+    include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
 ?>
 <title>Main page</title>
 </head>
@@ -25,23 +26,26 @@ session_start();
             <li> 
                 <h4 class="btnCategory">Category</h4>
                 <div class="dropdown"> 
-                    <ul class="selectionMenu">
-                        <li><a href="category/action.php">action</a></li>
-                        <li><a href="category/adventure.php">adventure</a></li>
-                        <li><a href="category/animation.php">animation</a></li>
-                        <li><a href="category/crime.php">crime</a></li>
-                        <li><a href="category/dramatic.php">dramatic</a></li>
-                        <li><a href="category/fantasy.php">fantasy</a></li>
-                        <li><a href="category/horror.php">horror</a></li>
-                        <li><a href="category/science-fiction.php">Sci-fi</a></li>
-                        <li><a href="category/thriller.php">thriller</a></li>
-                    </ul>
+                    <section class="selectionMenu">
+                        <a href="category/action.php">action</a>
+                        <a href="category/adventure.php">adventure</a>
+                        <a href="category/animation.php">animation</a>
+                        <a href="category/comedy.php">comedy</a>
+                        <a href="category/dramatic.php">dramatic</a>
+                        <a href="category/fantasy.php">fantasy</a>
+                        <a href="category/horror.php">horror</a>
+                        <a href="category/science-fiction.php">Sci-fi</a>
+                        <a href="category/thriller.php">thriller</a>
+                    </section>
                 </div>
             </li>
-            <?php
-            include ("searchbar.php");
-            ?>
-            <li class="navLogout">
+            <li>    
+                <form action="" method="POST">
+                    <input type="text" id="searchFilm" class="searchFilm">
+                    <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </li>
+            <li>
                 <a href="login.php">Log out</a>
             </li>
         </ul>
@@ -145,24 +149,51 @@ session_start();
         <div  id="carousel3" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="Images/Galerie/WPetit.jpg" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 1</h5>
-                        <p>Blablablablablablabla</p>
+
+<?php 
+    $sql = "SELECT * FROM getflix_movies WHERE id = 135;";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    while($row = mysqli_fetch_assoc($result)) {
+            echo "<img class='d-block' src=" . $row['movie_image'] . " alt='First slide'>" .
+                    "<div class='carousel-caption d-none d-md-block'>" . 
+                    "<h5>" . $row["title"] . "</h5>";
+            };
+?>
+
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="Images/Galerie/benjamin-wedemeyer-fwafgljc0f0-unsplash.jpg" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 2</h5>
-                        <p>Blablablablablablabla</p>
+
+<?php 
+    $sql = "SELECT * FROM getflix_movies WHERE id = 122;";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    while($row = mysqli_fetch_assoc($result)) {
+            echo "<img class='d-block' src=" . $row['movie_image'] . " alt='First slide'>" .
+                    "<div class='carousel-caption d-none d-md-block'>" . 
+                    "<h5>" . $row["title"] . "</h5>";
+            };
+?>
+
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="Images/Contact.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 3</h5>
-                        <p>Blablablablablablabla</p>
+
+<?php 
+    $sql = "SELECT * FROM getflix_movies WHERE id = 1;";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    while($row = mysqli_fetch_assoc($result)) {
+            echo "<img class='d-block' src=" . $row['movie_image'] . " alt='First slide'>" .
+                    "<div class='carousel-caption d-none d-md-block'>" . 
+                    "<h5>" . $row["title"] . "</h5>";
+            };
+?>
+
                     </div>
                 </div>
             </div>

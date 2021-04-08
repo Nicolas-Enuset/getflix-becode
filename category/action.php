@@ -24,34 +24,37 @@ session_start();
             </li>
             <li> 
                 <h4 class="btnCategory">Category</h4>
-                    <div class="dropdown"> 
-                        <ul class="selectionMenu">
-                            <li><a href="action.php">action</a></li>
-                            <li><a href="adventure.php">adventure</a></li>
-                            <li><a href="animation.php">animation</a></li>
-                            <li><a href="crime.php">crime</a></li>
-                            <li><a href="dramatic.php">dramatic</a></li>
-                            <li><a href="fantasy.php">fantasy</a></li>
-                            <li><a href="horror.php">horror</a></li>
-                            <li><a href="science-fiction.php">Sci-fi</a></li>
-                            <li><a href="thriller.php">thriller</a></li>
-                        </ul>
-                    </div>
+                <div class="dropdown"> 
+                    <section class="selectionMenu">
+                        <a href="../category/action.php">action</a>
+                        <a href="../category/adventure.php">adventure</a>
+                        <a href="../category/animation.php">animation</a>
+                        <a href="../category/comedy.php">comedy</a>
+                        <a href="../category/dramatic.php">dramatic</a>
+                        <a href="../category/fantasy.php">fantasy</a>
+                        <a href="../category/horror.php">horror</a>
+                        <a href="../category/science-fiction.php">Sci-fi</a>
+                        <a href="../category/thriller.php">thriller</a>
+                    </section>
+                </div>
             </li>
-            <?php
-            include ("searchbar_cat_folder.php");
-            ?>
-            <li class="navLogout">
-                <a href="login.php">Log out</a>
+            <li>    
+                <form action="" method="POST">
+                    <input type="text" id="searchFilm" class="searchFilm">
+                    <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </li>
+            <li>
+                <a href="../login.php">Log out</a>
             </li>
         </ul>
     </nav>
 </header>
 
-    <section id="category">
+    <article id="category">
         <h3>Action</h3>
         <!-- films correspondant à la category qui seront display en flex-->
-        <article class="action">
+        <section class="action">
         <?php
         include '../../connexion_getflix_db.php';
         $records = mysqli_query($conn,"select * from getflix_movies where genre_id='28'"); // fetch data from database
@@ -61,49 +64,44 @@ session_start();
             $i++;
         ?>
         <div class="movieContainer">
-            <img src="../<?php echo $data['movie_image']; ?>">
-<!-- Button trigger modal -->
-<button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
-   More Info
-</button>
-
+            <div class="hover">
+                <img src="<?php echo $data['movie_image']; ?>">
+                <!-- Button trigger modal -->
+                <button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
+                   More Info
+                </button>
+            </div>
 <!-- Modal -->
-<div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" 
-   aria-labelledby = "myModalLabel" aria-hidden = "true">
-   
-   <div class = "modal-dialog">
-      <div class = "modal-content">
-         <div class = "modal-header">
-            <h4 class = "modal-title" id = "myModalLabel">
-            <?php echo $data['title']; ?>
-            </h4>
-         </div>
-         <div class = "modal-body">
-            <?php echo $data['overview']; ?>
-         </div>
-         <div class = "modal-footer">
-            <?php echo $data['vote_average']; ?>/100
-         </div>
-         
-      </div><!-- /.modal-content -->
-   </div><!-- /.modal-dialog -->
-  
-</div><!-- /.modal -->
+            <div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" 
+               aria-labelledby = "myModalLabel" aria-hidden = "true">
+                    
+               <div class = "modal-dialog">
+                  <div class = "modal-content">
+                     <div class = "modal-header">
+                        <h4 class = "modal-title" id = "myModalLabel">
+                        <?php echo $data['title']; ?>
+                        </h4>
+                     </div>
+                     <div class = "modal-body">
+                        <?php echo $data['overview']; ?>
+                     </div>
+                     <div class = "modal-footer">
+                        <?php echo $data['vote_average']; ?>/100
+                     </div>
+                    
+                  </div><!-- /.modal-content -->
+               </div><!-- /.modal-dialog -->
+                    
+            </div><!-- /.modal -->
         </div>
         
         <?php
         }
         ?>
+        </section>
+    </article>
 </article>
-</section>
-    </section>
-</article>
-
 <!-- Movies -->
-
-
-
-
 
 <!-- footer -->
 <?php 
