@@ -22,6 +22,22 @@ session_start();
                     <img src="../pictures/logo.png" alt="logo" class="imgNavbar">
                 </a>
             </li>
+            <li> 
+                <h4 class="btnCategory">Category</h4>
+                <div class="dropdown"> 
+                    <section class="selectionMenu">
+                        <a href="category/action.php">action</a>
+                        <a href="category/adventure.php">adventure</a>
+                        <a href="category/animation.php">animation</a>
+                        <a href="category/comedy.php">comedy</a>
+                        <a href="category/dramatic.php">dramatic</a>
+                        <a href="category/fantasy.php">fantasy</a>
+                        <a href="category/horror.php">horror</a>
+                        <a href="category/science-fiction.php">Sci-fi</a>
+                        <a href="category/thriller.php">thriller</a>
+                    </section>
+                </div>
+            </li>
             <li>    
                 <form action="" method="POST">
                     <input type="text" id="searchFilm" class="searchFilm">

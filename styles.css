@@ -84,23 +84,6 @@ header .btnSearch:hover i {
   color: rgba(255, 215, 217, 0.9);
 }
 
-#bodyCategory header li:nth-child(3) a {
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bolder;
-  letter-spacing: 2px;
-  font-style: normal;
-  color: rgba(255, 128, 134, 0.9);
-}
-
-#bodyCategory header li:nth-child(3) {
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-}
-
 .navInclude li:nth-child(3) a {
   text-decoration: none;
   font-size: 1.2rem;
@@ -139,12 +122,14 @@ header .btnSearch:hover i {
   transition: all 0.5s;
 }
 
-#bodyMainPage .selectionMenu {
+#bodyMainPage .selectionMenu,
+#bodyCategory .selectionMenu {
   margin-left: 50%;
   transform: translateX(-50%);
 }
 
-#bodyMainPage .selectionMenu a {
+#bodyMainPage .selectionMenu a,
+#bodyCategory .selectionMenu a {
   width: 100%;
   text-align: center;
   padding: 5px;
@@ -152,7 +137,8 @@ header .btnSearch:hover i {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.3);
+  color: #626262;
+  background-color: rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid whitesmoke;
 }
 
@@ -173,24 +159,23 @@ header .btnSearch:hover i {
   pointer-events: all;
 }
 
-#bodyMainPage ul li:nth-child(2) section {
+#bodyMainPage ul li:nth-child(2) section,
+#bodyCategory ul li:nth-child(2) section {
   position: absolute;
 }
 
-#bodyMainPage ul li:nth-child(2) a {
-  color: white;
-}
-
-#bodyMainPage .navLogout a {
+#bodyCategory header li:nth-child(4) a,
+#bodyMainPage header li:nth-child(4) a {
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bolder;
   letter-spacing: 2px;
   font-style: normal;
   color: rgba(255, 128, 134, 0.9);
 }
 
-#bodyMainPage .navLogout {
+#bodyMainPage li:nth-child(4),
+#bodyCategory li:nth-child(4) {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
   height: 80px;

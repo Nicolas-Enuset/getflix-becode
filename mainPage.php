@@ -45,7 +45,7 @@ session_start();
                     <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
                 </form>
             </li>
-            <li class="navLogout">
+            <li>
                 <a href="login.php">Log out</a>
             </li>
         </ul>
