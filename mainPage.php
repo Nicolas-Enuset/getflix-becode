@@ -38,12 +38,9 @@ session_start();
                     </ul>
                 </div>
             </li>
-            <li>    
-                <form action="" method="POST">
-                    <input type="text" id="searchFilm" class="searchFilm">
-                    <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </li>
+            <?php
+            include ("searchbar.php");
+            ?>
             <li class="navLogout">
                 <a href="login.php">Log out</a>
             </li>
