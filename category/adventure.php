@@ -38,12 +38,9 @@ session_start();
                     </section>
                 </div>
             </li>
-            <li>    
-                <form action="" method="POST">
-                    <input type="text" id="searchFilm" class="searchFilm">
-                    <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </li>
+            <?php
+            include 'searchbar_cat_folder.php';
+            ?>
             <li>
                 <a href="../login.php">Log out</a>
             </li>
@@ -65,7 +62,7 @@ session_start();
         ?>
         <div class="movieContainer">
             <div class="hover">
-            <img src="<?php echo $data['movie_image']; ?>">
+            <img src="../<?php echo $data['movie_image']; ?>">
 <!-- Button trigger modal -->
             <button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
                More Info

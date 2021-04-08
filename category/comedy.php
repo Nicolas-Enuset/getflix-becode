@@ -38,12 +38,9 @@ session_start();
                     </section>
                 </div>
             </li>
-            <li>    
-                <form action="" method="POST">
-                    <input type="text" id="searchFilm" class="searchFilm">
-                    <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </li>
+            <?php
+            include 'searchbar_cat_folder.php';
+            ?>
             <li>
                 <a href="../login.php">Log out</a>
             </li>
@@ -56,7 +53,7 @@ session_start();
         <!-- films correspondant à la category qui seront display en flex-->
         <section class="action">
         <?php
-        include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
+        include '../../connexion_getflix_db.php';
         $records = mysqli_query($conn,"select * from getflix_movies where genre_id='35'"); // fetch data from database
         $i = 1;
         while($data = mysqli_fetch_array($records))
@@ -65,7 +62,7 @@ session_start();
         ?>
         <div class="movieContainer">
             <div class="hover">
-                <img src="<?php echo $data['movie_image']; ?>">
+                <img src="../<?php echo $data['movie_image']; ?>">
                 <!-- Button trigger modal -->
                 <button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
                    More Info
