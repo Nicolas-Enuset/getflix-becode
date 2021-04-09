@@ -6,18 +6,15 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  --blueBackground: #0f1121;
 }
 
-body:not(#bodySignup, #bodyLogin) {
+body:not(#bodySignup, #bodyLogin, #bodyMainPage) {
   background: linear-gradient(#141625, #000);
 }
 
 #container {
   flex: 1 0 auto;
-}
-
-#bodyMainPage {
-  background-color: black;
 }
 
 h1 {
@@ -35,7 +32,7 @@ h1 {
 /**$$$ a pimper!!! si temps */
 #nav_bar {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.9);
   margin: 0;
 }
 
@@ -93,19 +90,20 @@ header .btnSearch:hover i {
   letter-spacing: 2px;
   font-style: normal;
   color: rgba(255, 128, 134, 0.9);
-}
-
-.navInclude li:nth-child(3) {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
   height: 80px;
   width: 80px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navInclude li:nth-child(3) {
 }
 
 /* nav bar main page */
-
-/** a pimper!!! si temps */
 
 .btnCategory {
   border: 2px solid rgba(255, 119, 119, 0.2);
@@ -138,8 +136,8 @@ header .btnSearch:hover i {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8rem;
-  color: #626262;
-  background-color: rgba(255, 255, 255, 0.6);
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid whitesmoke;
 }
 
@@ -174,7 +172,7 @@ header .btnSearch:hover i {
 }
 
 #bodyCategory header li:nth-child(4) a,
-#bodyMainPage header li:nth-child(4) a {
+#bodyMainPage header li:nth-child(3) a {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bolder;
@@ -189,7 +187,7 @@ header .btnSearch:hover i {
   font-weight: bold;
 }
 
-#bodyMainPage header li:nth-child(4) a,
+#bodyMainPage header li:nth-child(3) a,
 #bodyCategory header li:nth-child(4) a {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
@@ -227,7 +225,7 @@ header .btnSearch:hover i {
 
 footer {
   flex-shrink: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 footer ul {
@@ -382,6 +380,11 @@ input:focus {
   border-radius: 5px;
 }
 
+#btnSignUp:hover {
+  color: #ec7171;
+  transition: 0.5s;
+}
+
 #goBackToLogin {
   text-align: center;
   padding-bottom: 30px;
@@ -462,6 +465,11 @@ input:focus {
   border-radius: 5px;
 }
 
+#btnSignIn:hover {
+  color: #ec7171;
+  transition: 0.5s;
+}
+
 #paragraphNoAccountYet {
   color: white;
   padding-bottom: 30px;
@@ -475,12 +483,88 @@ input:focus {
   flex-direction: column;
 }
 
+#frontMainPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#firstBlockMainPage {
+  background-image: url(pictures/erik-witsoe-GF8VvBgcJ4o-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#formMainPage {
+  width: 30%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#searchDivMainPage {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+}
+
+#h2MainPage {
+  color: white;
+  font-size: 8vh;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#pMainPage {
+  color: white;
+  font-size: 3vh;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#searchMainPage {
+  width: 50vh;
+  height: 100%;
+  padding: 0;
+  border-radius: 10px 0 0 10px;
+  color: rgba(227, 206, 161);
+  background-color: rgba(84, 84, 83, 0.4);
+}
+
+#searchMainPage::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+#passwordMainPage {
+  color: rgba(227, 206, 161);
+  background-color: rgba(150, 150, 150);
+  border-radius: 5px;
+}
+
+#btnSearchMainPage {
+  color: black;
+  width: 15vh;
+  height: 100%;
+  padding: 0;
+  border-radius: 0 10px 10px 0;
+  border: none;
+}
+
+#btnSearchMainPage:hover {
+  color: #ec7171;
+  transition: 0.5s;
+}
+
 /* Englobe tous les carrousels */
 .categoryList {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .categoryList img {
@@ -492,14 +576,15 @@ input:focus {
 /* Englobe chaque carrousel individuellement */
 .categoryItem {
   /*height: 200px;*/
-  background: linear-gradient(
-    black 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    black 100%
-  );
+  background-color: var(--blueBackground);
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 10px;
+}
+
+.categoryItem:first-child {
+  margin-top: 10px;
 }
 
 .categoryDescription {
@@ -508,6 +593,7 @@ input:focus {
   align-items: center;
   color: white;
 }
+
 /* retrieve password */
 
 #bodyRetrievePassword {
@@ -553,7 +639,7 @@ input:focus {
 /* search film */
 
 #bodySearchFilm {
-  background-color: #0f1121;
+  background-color: var(--blueBackground);
 }
 
 #filmFound {
@@ -691,7 +777,7 @@ input:focus {
   #bodyMainPage header li:nth-child(2),
   #bodyCategory header li:nth-child(2) {
     grid-column: 1 / 3;
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
     text-align: center;
   }
 
@@ -703,17 +789,15 @@ input:focus {
 
   #bodyMainPage header li:nth-child(3),
   #bodyCategory header li:nth-child(3) {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     text-align: center;
   }
 
-  #bodyMainPage header li:nth-child(3) input,
   #bodyCategory header li:nth-child(3) input {
     width: 100%;
   }
 
-  #bodyMainPage header li:nth-child(4),
   #bodyCategory header li:nth-child(4) {
     grid-column: 2 / 3;
     grid-row: 1;
@@ -751,7 +835,6 @@ input:focus {
 }
 
 @media screen and (min-width: 490px) and (max-width: 530px) {
-  #bodyMainPage header ul,
   #bodyCategory header ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -762,33 +845,28 @@ input:focus {
     height: 100px;
   }
 
-  #bodyMainPage header li:nth-child(1),
   #bodyCategory header li:nth-child(1) {
     grid-column: 1;
     grid-row: 1 / 2;
     text-align: center;
   }
 
-  #bodyMainPage header li:nth-child(2),
   #bodyCategory header li:nth-child(2) {
     grid-column: 1;
     grid-row: 2 / 3;
     text-align: center;
   }
 
-  #bodyMainPage header li:nth-child(3),
   #bodyCategory header li:nth-child(3) {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     text-align: center;
   }
 
-  #bodyMainPage header li:nth-child(3) input,
   #bodyCategory header li:nth-child(3) input {
     width: 100%;
   }
 
-  #bodyMainPage header li:nth-child(4),
   #bodyCategory header li:nth-child(4) {
     grid-column: 2 / 3;
     grid-row: 1;
@@ -797,7 +875,7 @@ input:focus {
   }
 }
 
-/* page login/signup et retrievePW moyen écran */
+/* page login/signup et retrievePW moyen écran responsive */
 
 @media screen and (max-width: 890px) {
   #formLogin {
@@ -859,7 +937,7 @@ input:focus {
   }
 }
 
-/* page login et signup petit écran */
+/* page login et signup petit écran responsive */
 
 @media screen and (max-width: 550px) {
   #formLogin {
@@ -906,5 +984,42 @@ input:focus {
 
   #formRetrievePassword {
     width: 250px;
+  }
+}
+
+/* page mainPage responsive */
+
+@media screen and (max-width: 765px) {
+  #h2MainPage {
+    font-size: 6vh;
+  }
+
+  #pMainPage {
+    font-size: 3vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #h2MainPage {
+    font-size: 5vh;
+  }
+  #pMainPage {
+    font-size: 2.5vh;
+  }
+  #searchDivMainPage {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  #h2MainPage {
+    font-size: 4vh;
+  }
+
+  #pMainPage {
+    font-size: 2vh;
+  }
+  #searchDivMainPage {
+    width: 300px;
   }
 }
