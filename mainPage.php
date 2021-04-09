@@ -14,43 +14,50 @@ session_start();
 <article id="container">
 
 <!-- Nav Bar -->
-<header>
-    <nav id="nav_bar">
-        <ul>
-            <li>
-                <a href="mainPage.php">
-                    <img src="pictures/logo.png" alt="logo" class="imgNavbar">         
-                </a>
-            </li>
-            <li> 
-                <h4 class="btnCategory">Category</h4>
-                <div class="dropdown"> 
-                    <ul class="selectionMenu">
-                        <li><a href="category/action.php">action</a></li>
-                        <li><a href="category/adventure.php">adventure</a></li>
-                        <li><a href="category/animation.php">animation</a></li>
-                        <li><a href="category/crime.php">crime</a></li>
-                        <li><a href="category/dramatic.php">dramatic</a></li>
-                        <li><a href="category/fantasy.php">fantasy</a></li>
-                        <li><a href="category/horror.php">horror</a></li>
-                        <li><a href="category/science-fiction.php">Sci-fi</a></li>
-                        <li><a href="category/thriller.php">thriller</a></li>
-                    </ul>
+<div id="frontMainPage">
+    <header>
+        <nav id="nav_bar">
+            <ul>
+                <li>
+                    <a href="mainPage.php">
+                        <img src="pictures/logo.png" alt="logo" class="imgNavbar">         
+                    </a>
+                </li>
+                <li> 
+                    <h4 class="btnCategory">Category</h4>
+                    <div class="dropdown"> 
+                        <ul class="selectionMenu">
+                            <li><a href="category/action.php">action</a></li>
+                            <li><a href="category/adventure.php">adventure</a></li>
+                            <li><a href="category/animation.php">animation</a></li>
+                            <li><a href="category/crime.php">crime</a></li>
+                            <li><a href="category/dramatic.php">dramatic</a></li>
+                            <li><a href="category/fantasy.php">fantasy</a></li>
+                            <li><a href="category/horror.php">horror</a></li>
+                            <li><a href="category/science-fiction.php">Sci-fi</a></li>
+                            <li><a href="category/thriller.php">thriller</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navLogout">
+                    <a href="login.php">Log out</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="firstBlockMainPage">
+        <section id="formMainPage">
+            <h2 id="h2MainPage">Illimited free streaming.</h2>
+            <p id="pMainPage">Sit down and enjoy !</p>
+            <form action="" method="POST">
+                <div id="searchDivMainPage">
+                    <input type="text" placeholder="Research movie" id="searchMainPage" class="searchMainPage">
+                    <button type="submit" id="btnSearchMainPage">Go</button>
                 </div>
-            </li>
-            <li>    
-                <form action="" method="POST">
-                    <input type="text" id="searchFilm" class="searchFilm">
-                    <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </li>
-            <li class="navLogout">
-                <a href="login.php">Log out</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-
+            </form>
+        </section>
+    </div>
+</div>
 <!--Carrousel 1-->
 <div class="categoryList">
     <div class="categoryItem">
@@ -61,25 +68,32 @@ session_start();
                 <li data-target="#carousel1" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active ">
-                    <img class="img-fluid w-100" src="" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 1</h5>
-                        <p>Blablablablablablabla</p>
+                <div class="carousel-item active">
+                    <?php
+                    include '/Applications/MAMP/htdocs/BeCode/connexion_getflix_db.php';
+                    $records = mysqli_query($conn,"select * from getflix_movies where id=15"); // fetch data from database
+                    $data = mysqli_fetch_assoc($records)
+                    ?>
+                    <div class="d-flex justify-content-center">
+                        <img class="img-fluid" src="<?php echo $data['movie_image']; ?>" alt="First slide">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="img-fluid w-100" src="" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 2</h5>
-                        <p>Blablablablablablabla</p>
+                    <?php
+                    $records = mysqli_query($conn,"select * from getflix_movies where id=32"); // fetch data from database
+                    $data = mysqli_fetch_assoc($records)
+                    ?>
+                    <div class="d-flex justify-content-center">
+                        <img class="img-fluid" src="<?php echo $data['movie_image']; ?>" alt="Second slide">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="img-fluid w-100" src="" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 3</h5>
-                        <p>Blablablablablablabla</p>
+                    <?php
+                    $records = mysqli_query($conn,"select * from getflix_movies where id=23"); // fetch data from database
+                    $data = mysqli_fetch_assoc($records)
+                    ?>
+                    <div class="d-flex justify-content-center">
+                        <img class="img-fluid" src="<?php echo $data['movie_image']; ?>" alt="Third slide">
                     </div>
                 </div>
             </div>
@@ -100,6 +114,9 @@ session_start();
 
     <!--Carrousel 2-->
     <div class="categoryItem">
+        <div class="categoryDescription">
+            <h2>Top rated</h2>
+        </div>
         <div  id="carousel2" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel2" data-slide-to="0" class="active"></li>
@@ -108,24 +125,30 @@ session_start();
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="Images/Galerie/WPetit.jpg" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 1</h5>
-                        <p>Blablablablablablabla</p>
+                    <?php
+                    $records = mysqli_query($conn,"select * from getflix_movies where id=1"); // fetch data from database
+                    $data = mysqli_fetch_assoc($records)
+                    ?>
+                    <div class="d-flex justify-content-center">
+                        <img class="d-block " src="<?php echo $data['movie_image']; ?>" alt="First slide">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 2</h5>
-                        <p>Blablablablablablabla</p>
+                    <?php
+                    $records = mysqli_query($conn,"select * from getflix_movies where id=2"); // fetch data from database
+                    $data = mysqli_fetch_assoc($records)
+                    ?>
+                    <div class="d-flex justify-content-center">
+                        <img class="d-block" src="<?php echo $data['movie_image']; ?>" alt="Second slide">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="Images/Contact.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 3</h5>
-                        <p>Blablablablablablabla</p>
+                    <?php
+                    $records = mysqli_query($conn,"select * from getflix_movies where id=18"); // fetch data from database
+                    $data = mysqli_fetch_assoc($records)
+                    ?>
+                    <div class="d-flex justify-content-center">
+                        <img class="d-block" src="<?php echo $data['movie_image']; ?>" alt="Third slide">
                     </div>
                 </div>
             </div>
@@ -138,53 +161,6 @@ session_start();
                 <span class="sr-only">Next</span>
             </a>
     
-        </div>
-        <div class="categoryDescription">
-            <h2>Top rated</h2>
-        </div>
-    </div>
-    <!--Carrousel 3-->
-    <div class="categoryItem">
-        <div  id="carousel3" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="Images/Galerie/WPetit.jpg" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 1</h5>
-                        <p>Blablablablablablabla</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="Images/Galerie/benjamin-wedemeyer-fwafgljc0f0-unsplash.jpg" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 2</h5>
-                        <p>Blablablablablablabla</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="Images/Contact.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Titre 3</h5>
-                        <p>Blablablablablablabla</p>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel3" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            <ol class="carousel-indicators">
-                <li data-target="#carousel3" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel3" data-slide-to="1"></li>
-                <li data-target="#carousel3" data-slide-to="2"></li>
-            </ol>
-        </div>
-        <div class="categoryDescription">
-            <h2>Upcoming movies</h2>
         </div>
     </div>
 </div>

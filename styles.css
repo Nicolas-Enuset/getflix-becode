@@ -1,3 +1,7 @@
+body{
+  --blueBackground : #0f1121;
+}
+
 body {
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
@@ -9,9 +13,6 @@ body {
 
 #container {
   flex: 1 0 auto;
-}
-#bodyMainPage {
-  background-color: black;
 }
 
 h1 {
@@ -110,8 +111,6 @@ header .btnSearch:hover i {
 }
 
 /* nav bar main page */
-
-/** a pimper!!! si temps */
 
 .btnCategory {
   border: 2px solid rgba(255, 119, 119, 0.2);
@@ -343,6 +342,11 @@ input:focus {
   border-radius: 5px;
 }
 
+#btnSignUp:hover {
+  color: #ec7171;
+  transition: 0.5s;
+}
+
 #goBackToLogin {
   text-align: center;
   padding-bottom: 30px;
@@ -355,13 +359,13 @@ input:focus {
   text-align: center;
   margin-top: 20px;
   text-transform: uppercase;
-  background-color: #0f1121;
+  background-color: var(--blueBackground);
   color: whitesmoke;
 }
 
 #bodyCategory,
 h3 {
-  background-color: #0f1121;
+  background-color: var(--blueBackground);
 }
 
 /* login */
@@ -405,6 +409,11 @@ h3 {
   border-radius: 5px;
 }
 
+#btnSignIn:hover {
+  color: #ec7171;
+  transition: 0.5s;
+}
+
 #paragraphNoAccountYet {
   color: white;
   padding-bottom: 30px;
@@ -413,9 +422,81 @@ h3 {
 
 /* Main page */
 
+#bodyMainPage footer {
+  background-color: green;
+
+}
+
 .selectionMenu {
   display: flex;
   flex-direction: column;
+}
+
+#frontMainPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#firstBlockMainPage {
+  background-image: url(pictures/erik-witsoe-GF8VvBgcJ4o-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#formMainPage {
+  width: 30%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#searchDivMainPage {
+  display: flex;
+}
+
+#h2MainPage {
+  color: white;
+  font-size: 8vh;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#pMainPage {
+  color: white;
+  font-size: 3vh;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#searchMainPage {
+  width: 50vh;
+  height: 5vh;
+  color: rgba(227, 206, 161);
+  background-color: rgba(84, 84, 83);
+}
+
+#passwordMainPage {
+  color: rgba(227, 206, 161);
+  background-color: rgba(150, 150, 150);
+  border-radius: 5px;
+}
+
+#btnSearchMainPage {
+  color: black;
+  /* margin-top: 50px; */
+  /* margin-bottom: 25px; */
+  width: 15vh;
+  /* border-radius: 5px; */
+}
+
+#btnSearchMainPage:hover {
+  color: #ec7171;
+  transition: 0.5s;
 }
 
 /* Englobe tous les carrousels */
@@ -423,20 +504,20 @@ h3 {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 /* Englobe chaque carrousel individuellement */
 .categoryItem {
   /*height: 200px;*/
-  background: linear-gradient(
-    black 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    black 100%
-  );
+  background-color: var(--blueBackground);
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 10px;
+}
+
+.categoryItem:first-child {
+  margin-top: 10px;
 }
 
 .categoryDescription {
@@ -490,7 +571,7 @@ h3 {
 /* search film */
 
 #bodySearchFilm {
-  background-color: #0f1121;
+  background-color: var(--blueBackground);
 }
 
 #filmFound {
@@ -515,7 +596,7 @@ h3 {
   grid-template-rows: auto auto auto auto;
 }
 
-/* responsive nav bar */
+/* navbar responsive */
 
 @media screen and (max-width: 430px) {
   header ul {
@@ -647,7 +728,7 @@ h3 {
   }
 }
 
-/* page login/signup et retrievePW moyen écran */
+/* page login/signup et retrievePW moyen écran responsive */
 
 @media screen and (max-width: 890px) {
   #formLogin {
@@ -709,7 +790,7 @@ h3 {
   }
 }
 
-/* page login et signup petit écran */
+/* page login et signup petit écran responsive */
 
 @media screen and (max-width: 550px) {
   #formLogin {
@@ -758,3 +839,41 @@ h3 {
     width: 250px;
   }
 }
+
+/* page mainPage responsive */
+
+@media screen and (max-width: 765px) {
+  #h2MainPage {
+    font-size: 6vh;
+  }
+
+  #pMainPage {
+    font-size: 3vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #h2MainPage {
+    font-size: 5vh;
+  }
+  #pMainPage {
+    font-size: 2.5vh;
+  }
+  #searchDivMainPage {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  #h2MainPage {
+    font-size: 4vh;
+  }
+
+  #pMainPage {
+    font-size: 2vh;
+  }
+  #searchDivMainPage {
+    width: 300px;
+  }
+}
+
