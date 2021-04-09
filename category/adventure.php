@@ -31,7 +31,7 @@ session_start();
                         <a href="../category/animation.php">animation</a>
                         <a href="../category/comedy.php">comedy</a>
                         <a href="../category/dramatic.php">dramatic</a>
-                        <a href="../category/fantasy.php">fantasy</a>
+                        <a href="../category/fantasy.php">family</a>
                         <a href="../category/horror.php">horror</a>
                         <a href="../category/science-fiction.php">Sci-fi</a>
                         <a href="../category/thriller.php">thriller</a>
@@ -40,8 +40,9 @@ session_start();
             </li>
             <li>    
                 <form action="" method="POST">
+                    <label for="searchFilm">Search a film here!</label>
                     <input type="text" id="searchFilm" class="searchFilm">
-                    <button type="submit" class="btnSearch"><i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" class="btnSearch" aria-label="search_button"><i class="fas fa-paper-plane"></i></button>
                 </form>
             </li>
             <li>
@@ -65,7 +66,7 @@ session_start();
         ?>
         <div class="movieContainer">
             <div class="hover">
-            <img src="<?php echo $data['movie_image']; ?>">
+            <img src="<?php echo $data['movie_image']; ?>" alt="<?php echo $data['title'] ?>">
 <!-- Button trigger modal -->
             <button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
                More Info
@@ -79,7 +80,7 @@ session_start();
                <div class = "modal-dialog">
                   <div class = "modal-content">
                      <div class = "modal-header">
-                        <h4 class = "modal-title" id = "myModalLabel">
+                        <h4 class = "modal-title">
                         <?php echo $data['title']; ?>
                         </h4>
                      </div>
