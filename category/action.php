@@ -4,7 +4,7 @@ session_start();
 <?php 
     include("../head.php")
 ?>
-<title>apache_get_version</title>
+<title>Action film</title>
 </head>
 
 <!-- body -->
@@ -31,7 +31,7 @@ session_start();
                         <a href="../category/animation.php">animation</a>
                         <a href="../category/comedy.php">comedy</a>
                         <a href="../category/dramatic.php">dramatic</a>
-                        <a href="../category/fantasy.php">fantasy</a>
+                        <a href="../category/fantasy.php">family</a>
                         <a href="../category/horror.php">horror</a>
                         <a href="../category/science-fiction.php">Sci-fi</a>
                         <a href="../category/thriller.php">thriller</a>
@@ -55,6 +55,9 @@ session_start();
         <?php
         include '../../connexion_getflix_db.php';
         $records = mysqli_query($conn,"select * from getflix_movies where getflix_movies.genre_id='28' "); // fetch data from database
+        include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
+
+        $records = mysqli_query($conn,"select * from getflix_movies where genre_id='28'"); // fetch data from database
         $i = 1;
         while($data = mysqli_fetch_array($records))
         {
@@ -62,13 +65,13 @@ session_start();
         ?>
         <div class="movieContainer">
             <div class="hover">
-                <img src="../<?php echo $data['movie_image']; ?>">
+                <img src="../<?php echo $data['movie_image']; ?>" alt="<?php echo $data['title'] ?>">
                 <!-- Button trigger modal -->
                 <button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
                    More Info
                 </button>
             </div>
-<!-- Modal -->
+        <!-- Modal -->
             <div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" 
                aria-labelledby = "myModalLabel" aria-hidden = "true"> 
                <div class = "modal-dialog">
