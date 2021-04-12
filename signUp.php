@@ -44,12 +44,14 @@ session_start();
                 <input placeholder="Password" type="password" id="passwordSignUp" class="passwordSignUp">
             <label for="passwordSignUp" ></label>
             <p id="signUpConfirmPw">Confirm password :</p>
-                <input placeholder="Password" type="password" id="passwordSignUp" class="passwordSignUp">
+                <input placeholder="Password" type="password" id="passwordSignUp2" class="passwordSignUp">
             <label for="subscribeSignUp" id="labelSubscribeNewsletter">Subscribe to our newsletter? Check bellow then</label>
-                <input type="checkbox" id="checkboxSignUp" class="subscribeSignUp" value="check">
+                <input type="checkbox" id="subscribeSignUp" class="subscribeSignUp" value="check">
             <button type="submit" id="btnSignUp">Sign up</button>
         </form>
     </section>
+</article>
+
 <?php 
     include("footer.php")
 ?>
