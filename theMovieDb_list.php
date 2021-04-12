@@ -21,7 +21,7 @@
   <?php 
   
 $api_key = '1b49e96a9d4ee88a895f9eeda8a965d1';
-$api_url ='https://api.themoviedb.org/3/movie/popular?api_key='.$api_key.'&language=en-US&page=2';
+$api_url ='https://api.themoviedb.org/3/movie/popular?api_key='.$api_key.'&language=en-US&page=12';
 $img_url = "https://image.tmdb.org/t/p/w185//";
 
 $json_data = file_get_contents($api_url);
@@ -38,7 +38,7 @@ foreach($results as $key => $value)
 
   $point = ".";
   $newPoint = "";
-  if ($value["genre_ids"][0] == 28) {
+  if ($value["genre_ids"][0] == 53) {
 ?>
   <tr>
     <form action="theMovieDb_form.php" method="post" enctype="multipart/form-data">
@@ -70,7 +70,7 @@ foreach($results as $key => $value)
         $key_video = $response_data_two['results'][0]['key'];
         $youtube_link = "https://www.youtube.com/embed/$key_video";
         ?>
-        <input name="movie_vote" type="text" value="<?php echo $youtube_link;?>">
+        <input name="youtube_trailer" type="text" value="<?php echo $youtube_link;?>">
       </td>
       <td><button type="submit" class="btn btn-danger button1">Submit</button></td>
     </form>

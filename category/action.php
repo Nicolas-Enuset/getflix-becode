@@ -88,10 +88,11 @@ session_start();
                         <?php echo $data['overview']; ?>
                      </div>
                      <div class = "modal-body">
-                     <iframe width="420" height="315" src="https://www.youtube.com/embed/LdOM0x0XDMo"></iframe>
+                     <iframe width="420" height="315" src="<?php echo $data['youtube_trailer']?>"></iframe>
+                     <!--https://www.youtube.com/embed/-->
                      </div>
                      <div class = "modal-footer">
-                        Rating: <?php echo $data['vote_average']; ?>/100
+                        Rating: <?php echo $data['vote_average']; ?>/10
                      </div>
                      <?php
                      $comments = mysqli_query($conn,"select * from getflix_comment where movie_id=$testId"); // fetch data from database

@@ -3,7 +3,7 @@ session_start();
 ?>
 <?php 
     include "head.php";
-    include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
+    include '../connexion_getflix_db.php';
 ?>
 <title>Main page</title>
 </head>
@@ -62,7 +62,7 @@ session_start();
         <article class="categoryList">
             
             <section class="categoryItem">
-                <div  id="carousel1" class="carousel slide  h-100" data-ride="carousel">
+                <div  id="carousel1" class="carousel slide " data-ride="carousel">
                     <ul class="carousel-indicators">
                         <li data-target="#carousel1" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel1" data-slide-to="1"></li>
