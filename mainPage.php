@@ -46,7 +46,10 @@ session_start();
                 </form>
             </li>
             <li>
-                <a href="login.php">Log out</a>
+                <a href="login_test.php">Log in</a>
+            </li>
+            <li>
+                <a href="logout_test.php">Log out</a>
             </li>
         </ul>
     </nav>

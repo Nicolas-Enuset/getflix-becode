@@ -29,12 +29,12 @@ session_start();
     <!-- form login -->
     <section id="formLogin">
         <h2 id="h2Login">Login</h2>
-        <form action="" method="POST">
+        <form action="connexion.php" method="POST">
             <label for="usernameLogin"></label>
-                <input type="text" id="usernameLogin" placeholder="pseudo" class="usernameLogin">
+                <input type="text" name="pseudo" id="usernameLogin" placeholder="pseudo" class="usernameLogin">
             <label for="passwordLogin"></label>
-                <input type="password" id="passwordLogin" placeholder="password" class="passwordLogin">
-            <button type="submit" id="btnSignIn">Login</button>
+                <input type="password" name="mdp" id="passwordLogin" placeholder="password" class="passwordLogin">
+            <button type="submit" name="connexion" value="Connexion" id="btnSignIn">Login</button>
         </form>
         <p id="paragraphNoAccountYet">You don't have an account yet ? <a id="linkToSignUpPage" href="signUp.php">Sign up here.</a> </p>
     </section>
