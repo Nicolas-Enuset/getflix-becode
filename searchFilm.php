@@ -37,9 +37,21 @@ session_start();
             <?php
             include 'searchbar.php';
             ?>
-            <li>
-                <a href="../login.php">Log out</a>
-            </li>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            ?>
+                <li>
+                    <a href="logout_test.php">Log out</a>
+                </li>
+            <?php
+            } else {
+            ?>
+                <li>
+                    <a href="login.php">Log in</a>
+                </li>
+            <?php
+            }
+            ?>
         </ul>
     </nav>
 </header>
@@ -52,6 +64,7 @@ session_start();
 include '../connexion_getflix_db.php';
 $researched_movie = $_POST['research_movie'];
 
+include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
 $records = mysqli_query($conn,"select * from getflix_movies where title like '%$researched_movie%'"); // fetch data from database
 $i = 1;
 while($data = mysqli_fetch_array($records))
@@ -67,23 +80,55 @@ while($data = mysqli_fetch_array($records))
         </button>
     </div>
 <!-- Modal -->
-    <div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
-    <div class = "modal-dialog">
-            <div class = "modal-content">
-                <div class = "modal-header">
-                    <h4 class = "modal-title" id = "myModalLabel">
-                        <?php echo $data['title']; ?>
-                    </h4>
-                </div>
-                <div class = "modal-body">
-                    <?php echo $data['overview']; ?>
-                </div>
-                <div class = "modal-footer">
-                    <?php echo $data['vote_average']; ?>/100
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+<div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" 
+               aria-labelledby = "myModalLabel" aria-hidden = "true"> 
+               <div class = "modal-dialog">
+                  <div class = "modal-content text-white bg-dark">
+                     <div class = "modal-header">
+                        <h4 class = "modal-title" id = "myModalLabel">
+                        <?php 
+                            echo $data['title'];
+                            $testId = $data['id'];
+                         ?>
+                        </h4>
+                     </div>
+                     <div class = "modal-body">
+                        <?php echo $data['overview']; ?>
+                     </div>
+                     <div class = "modal-body">
+                     <iframe width="420" height="315" src="<?php echo $data['youtube_trailer']?>"></iframe>
+                     <!--https://www.youtube.com/embed/-->
+                     </div>
+                     <div class = "modal-footer">
+                        Rating: <?php echo $data['vote_average']; ?>/10
+                     </div>
+                     <?php
+                     $comments = mysqli_query($conn,"select * from getflix_comment where movie_id=$testId"); // fetch data from database
+                     while($data_test = mysqli_fetch_array($comments))
+                     {
+                     ?>
+                        <div class = "modal-footer">
+                            <?php echo $data_test['username_comment'].(": ").$data_test['comment'];?>
+                        </div>
+                     <?php
+                     }
+                     ?>
+                     <?php
+                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                     ?>
+                     <div class = "modal-footer">
+                        <form action="comment_form.php" method="post">
+                            <input name="user_comment" type="text">
+                            <input name="movie_id" type="hidden" value="<?php echo $data['id']; ?>">
+                            <button type="submit" class="btn btn-danger button1">Submit</button>
+                        </form>
+                    </div>
+                    <?php
+                    }
+                    ?>
+                  </div><!-- /.modal-content -->
+               </div><!-- /.modal-dialog -->
+            </div>
 </div>
 <?php
 }

@@ -4,7 +4,7 @@ session_start();
 <?php 
     include("../head.php")
 ?>
-<title>Action film</title>
+<title>Action movies</title>
 </head>
 
 <!-- body -->
@@ -41,9 +41,21 @@ session_start();
             <?php
             include 'searchbar_cat_folder.php';
             ?>
-            <li>
-                <a href="../login.php">Log out</a>
-            </li>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            ?>
+                <li>
+                    <a href="../logout_test.php">Log out</a>
+                </li>
+            <?php
+            } else {
+            ?>
+                <li>
+                    <a href="../login.php">Log in</a>
+                </li>
+            <?php
+            }
+            ?>
         </ul>
     </nav>
 </header>
