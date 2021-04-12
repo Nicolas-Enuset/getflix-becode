@@ -9,7 +9,7 @@ body {
   --blueBackground: #0f1121;
 }
 
-body:not(#bodySignup, #bodyLogin, #bodyMainPage) {
+body:not(#bodySignup, #bodyLogin, #bodyMainPage, #bodyRetrievePassword) {
   background: linear-gradient(#141625, #000);
 }
 
@@ -487,11 +487,11 @@ input:focus {
 }
 
 #firstBlockMainPage {
+  min-height: 100vh;
   background-image: url(pictures/erik-witsoe-GF8VvBgcJ4o-unsplash.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
