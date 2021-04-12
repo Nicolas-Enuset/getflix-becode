@@ -54,7 +54,7 @@ session_start();
         <section class="action">
         <?php
         include '../../connexion_getflix_db.php';
-        $records = mysqli_query($conn,"select * from getflix_movies where genre_id='28'"); // fetch data from database
+        $records = mysqli_query($conn,"select * from getflix_movies where getflix_movies.genre_id='28' "); // fetch data from database
         $i = 1;
         while($data = mysqli_fetch_array($records))
         {
@@ -70,22 +70,50 @@ session_start();
             </div>
 <!-- Modal -->
             <div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" 
-               aria-labelledby = "myModalLabel" aria-hidden = "true">
-                    
+               aria-labelledby = "myModalLabel" aria-hidden = "true"> 
                <div class = "modal-dialog">
-                  <div class = "modal-content">
+                  <div class = "modal-content text-white bg-dark">
                      <div class = "modal-header">
                         <h4 class = "modal-title" id = "myModalLabel">
-                        <?php echo $data['title']; ?>
+                        <?php 
+                            echo $data['title'];
+                            $testId = $data['id'];
+                         ?>
                         </h4>
                      </div>
                      <div class = "modal-body">
                         <?php echo $data['overview']; ?>
                      </div>
-                     <div class = "modal-footer">
-                        <?php echo $data['vote_average']; ?>/100
+                     <div class = "modal-body">
+                     <iframe width="420" height="315" src="https://www.youtube.com/embed/LdOM0x0XDMo"></iframe>
                      </div>
-                    
+                     <div class = "modal-footer">
+                        Rating: <?php echo $data['vote_average']; ?>/100
+                     </div>
+                     <?php
+                     $comments = mysqli_query($conn,"select * from getflix_comment where movie_id=$testId"); // fetch data from database
+                     while($data_test = mysqli_fetch_array($comments))
+                     {
+                     ?>
+                        <div class = "modal-footer">
+                            <?php echo $data_test['username_comment'].(": ").$data_test['comment'];?>
+                        </div>
+                     <?php
+                     }
+                     ?>
+                     <?php
+                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                     ?>
+                     <div class = "modal-footer">
+                        <form action="comment_form.php" method="post">
+                            <input name="user_comment" type="text">
+                            <input name="movie_id" type="hidden" value="<?php echo $data['id']; ?>">
+                            <button type="submit" class="btn btn-danger button1">Submit</button>
+                        </form>
+                    </div>
+                    <?php
+                    }
+                    ?>
                   </div><!-- /.modal-content -->
                </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
