@@ -69,10 +69,10 @@ session_start();
 
         // $records = mysqli_query($conn,"select * from getflix_movies where getflix_movies.genre_id='28' "); // fetch data from database
 
-        $data = $conn->query("select * from getflix_movies where genre_id='28'"); // fetch data from database
+        $records = mysqli_query($conn,"select * from getflix_movies where genre_id='28'"); // fetch data from database
         
         $i = 1;
-        while($data->fetch_assoc())
+        while($data = mysqli_fetch_assoc($records))
         {
             $i++;
         ?>
