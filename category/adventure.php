@@ -63,7 +63,7 @@ session_start();
     <article id="category">
         <h3>Adventure</h3>
          <!-- films correspondant à la category qui seront display en flex-->
-         <section class="action"
+         <section class="action">
         <?php
         include '../connexion_getflix_db.php';
 
@@ -108,11 +108,11 @@ session_start();
                      </div>
                      <?php
                      $comments = mysqli_query($conn,"select * from getflix_comment where movie_id=$testId"); // fetch data from database
-                     while($data = mysqli_fetch_array($comments))
+                     while($data_test = mysqli_fetch_array($comments))
                      {
                      ?>
                         <div class = "modal-footer">
-                            <?php echo $data['username_comment'].(": ").$data['comment'];?>
+                            <?php echo $data_test['username_comment'].(": ").$data_test['comment'];?>
                         </div>
                      <?php
                      }
