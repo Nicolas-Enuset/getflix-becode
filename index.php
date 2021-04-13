@@ -3,7 +3,7 @@ session_start();
 ?>
 <?php 
     include "head.php";
-    require_once 'connexion_getflix_db.php';
+    include '../connexion_getflix_db.php';
 ?>
 <title>Main page</title>
 </head>
