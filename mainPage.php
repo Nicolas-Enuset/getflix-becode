@@ -4,6 +4,7 @@ session_start();
 <?php 
     include "head.php";
     include 'connexion_getflix_db.php';
+
 ?>
 <title>Main page</title>
 </head>
@@ -39,9 +40,21 @@ session_start();
                             </section>
                         </div>
                     </li>
-                    <li>
-                        <a href="login.php">Log out</a>
-                    </li>
+                    <?php
+                        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    ?>
+                        <li>
+                            <a href="logout_test.php">Log out</a>
+                        </li>
+                    <?php
+                    } else {
+                    ?>
+                        <li>
+                            <a href="login.php">Log in</a>
+                        </li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </nav>
         </header>
@@ -50,19 +63,16 @@ session_start();
             <div id="formMainPage">
                 <h2 id="h2MainPage">Illimited free streaming.</h2>
                 <p id="pMainPage">Sit down and enjoy !</p>
-                <form action="" method="POST">
-                    <div id="searchDivMainPage">
-                        <input type="text" placeholder="Research movie" id="searchMainPage" class="searchMainPage">
-                        <button type="submit" id="btnSearchMainPage">Go</button>
-                    </div>
-                </form>
+                <?php
+                    include 'searchbar.php';
+                ?>
             </div>
         </section>
         <!--Carrousel 1-->
         <article class="categoryList">
             
             <section class="categoryItem">
-                <div  id="carousel1" class="carousel slide  h-100" data-ride="carousel">
+                <div  id="carousel1" class="carousel slide " data-ride="carousel">
                     <ul class="carousel-indicators">
                         <li data-target="#carousel1" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel1" data-slide-to="1"></li>

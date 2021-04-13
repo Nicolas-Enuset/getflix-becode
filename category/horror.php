@@ -38,16 +38,24 @@ session_start();
                     </section>
                 </div>
             </li>
-            <li>    
-                <form action="" method="POST">
-                    <label for="searchFilm">Search a film here!</label>
-                    <input type="text" id="searchFilm" class="searchFilm">
-                    <button type="submit" class="btnSearch" aria-label="search_button"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </li>
-            <li>
-                <a href="../login.php">Log out</a>
-            </li>
+            <?php
+            include 'searchbar_cat_folder.php';
+            ?>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            ?>
+                <li>
+                    <a href="../logout_test.php">Log out</a>
+                </li>
+            <?php
+            } else {
+            ?>
+                <li>
+                    <a href="../login.php">Log in</a>
+                </li>
+            <?php
+            }
+            ?>
         </ul>
     </nav>
 </header>
@@ -59,6 +67,9 @@ session_start();
         <?php
         include '../connexion_getflix_db.php';
 
+        $records = mysqli_query($conn,"select * from getflix_movies where getflix_movies.genre_id='27' "); // fetch data from database
+
+
         $records = mysqli_query($conn,"select * from getflix_movies where genre_id='27'"); // fetch data from database
         $i = 1;
         while($data = mysqli_fetch_array($records))
@@ -67,45 +78,71 @@ session_start();
         ?>
         <div class="movieContainer">
             <div class="hover">
-                <img src="<?php echo $data['movie_image']; ?>" alt="<?php echo $data['title'] ?>">
+                <img src="../<?php echo $data['movie_image']; ?>" alt="<?php echo $data['title'] ?>">
                 <!-- Button trigger modal -->
                 <button class = "btn btn-secondary " data-toggle = "modal" data-target = "#myModal<?php echo $i ?>">
-                More Info
+                   More Info
                 </button>
             </div>
-
-            <!-- Modal -->
+        <!-- Modal -->
             <div class = "modal fade" id ="myModal<?php echo $i ?>" tabindex = "-1" role = "dialog" 
-            aria-labelledby = "myModalLabel" aria-hidden = "true">
-            
-            <div class = "modal-dialog">
-                <div class = "modal-content">
-                    <div class = "modal-header">
-                        <h4 class = "modal-title">
-                        <?php echo $data['title']; ?>
+               aria-labelledby = "myModalLabel" aria-hidden = "true"> 
+               <div class = "modal-dialog">
+                  <div class = "modal-content text-white bg-dark">
+                     <div class = "modal-header">
+                        <h4 class = "modal-title" id = "myModalLabel">
+                        <?php 
+                            echo $data['title'];
+                            $testId = $data['id'];
+                         ?>
                         </h4>
-                    </div>
-                    <div class = "modal-body">
+                     </div>
+                     <div class = "modal-body">
                         <?php echo $data['overview']; ?>
+                     </div>
+                     <div class = "modal-body">
+                     <iframe width="420" height="315" src="<?php echo $data['youtube_trailer']?>"></iframe>
+                     <!--https://www.youtube.com/embed/-->
+                     </div>
+                     <div class = "modal-footer">
+                        Rating: <?php echo $data['vote_average']; ?>/10
+                     </div>
+                     <?php
+                     $comments = mysqli_query($conn,"select * from getflix_comment where movie_id=$testId"); // fetch data from database
+                     while($data_test = mysqli_fetch_array($comments))
+                     {
+                     ?>
+                        <div class = "modal-footer">
+                            <?php echo $data_test['username_comment'].(": ").$data_test['comment'];?>
+                        </div>
+                     <?php
+                     }
+                     ?>
+                     <?php
+                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                     ?>
+                     <div class = "modal-footer">
+                        <form action="comment_form.php" method="post">
+                            <input name="user_comment" type="text">
+                            <input name="movie_id" type="hidden" value="<?php echo $data['id']; ?>">
+                            <button type="submit" class="btn btn-danger button1">Submit</button>
+                        </form>
                     </div>
-                    <div class = "modal-footer">
-                        <?php echo $data['vote_average']; ?>/100
-                    </div>
-                    
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-            
+                    <?php
+                    }
+                    ?>
+                  </div><!-- /.modal-content -->
+               </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
         </div>
         
         <?php
         }
         ?>
-
         </section>
     </article>
 </article>
-
+<!-- Movies -->
 
 <!-- footer -->
 <?php 
@@ -116,6 +153,5 @@ session_start();
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 </body>
 </html>

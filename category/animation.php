@@ -66,9 +66,9 @@ session_start();
         <section class="action">
         <?php
         include '../connexion_getflix_db.php';
-        
+
         $records = mysqli_query($conn,"select * from getflix_movies where getflix_movies.genre_id='16' "); // fetch data from database
-        include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
+        
 
         $records = mysqli_query($conn,"select * from getflix_movies where genre_id='16'"); // fetch data from database
         $i = 1;
