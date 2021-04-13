@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "connexion_user_test.php";
+include "connexion_user_test.php";
  
 // Define variables and initialize with empty values
 $first_name = $last_name = $username = $user_email = $password = $confirm_password = "";
