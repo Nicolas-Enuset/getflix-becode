@@ -1,6 +1,6 @@
 <?php
 // Include config file
-include "connexion_user_test.php";
+include "connexion_getflix_db.php";
  
 // Define variables and initialize with empty values
 $first_name = $last_name = $username = $user_email = $password = $confirm_password = "";
