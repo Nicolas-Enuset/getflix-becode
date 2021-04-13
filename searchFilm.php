@@ -118,7 +118,7 @@ while($data = mysqli_fetch_array($records))
                      if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                      ?>
                      <div class = "modal-footer">
-                        <form action="comment_form.php" method="post">
+                        <form action="category/comment_form.php" method="post">
                             <input name="user_comment" type="text">
                             <input name="movie_id" type="hidden" value="<?php echo $testId; ?>">
                             <button type="submit" class="btn btn-danger button1">Submit</button>
