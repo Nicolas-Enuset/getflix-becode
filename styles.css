@@ -507,7 +507,7 @@ input:focus {
   border: none;
 }
 
-#firstBlockMainPage i {
+#firstBlockMainPage header i {
   font-size: 25px;
   margin-top: 10px;
   color: whitesmoke;
