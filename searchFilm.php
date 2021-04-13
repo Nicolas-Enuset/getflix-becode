@@ -61,7 +61,8 @@ session_start();
 <h3>Researched movies</h3>
     <section class="action">
 <?php
-include '../connexion_getflix_db.php';
+include 'connexion_getflix_db.php';
+
 $researched_movie = $_POST['research_movie'];
 
 $records = mysqli_query($conn,"select * from getflix_movies where title like '%$researched_movie%'"); // fetch data from database
