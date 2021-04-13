@@ -18,7 +18,7 @@ session_start();
         <nav id="nav_bar">
             <ul>
                 <li>
-                    <a href="signUp.php">
+                    <a href="index.php">
                         <img src="pictures/logo.png" alt="logo" class="imgNavbar">
                     </a>
                 </li>
