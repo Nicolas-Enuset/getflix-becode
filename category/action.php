@@ -109,11 +109,11 @@ session_start();
                      </div>
                      <?php
                      $comments = mysqli_query($conn,"select * from getflix_comment where movie_id=$testId"); // fetch data from database
-                     while($data_test = mysqli_fetch_array($comments))
+                     while($data = mysqli_fetch_array($comments))
                      {
                      ?>
                         <div class = "modal-footer">
-                            <?php echo $data_test['username_comment'].(": ").$data_test['comment'];?>
+                            <?php echo $data['username_comment'].(": ").$data['comment'];?>
                         </div>
                      <?php
                      }
