@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
  
 // Include config file
-require_once "connexion_user_test.php";
+include "connexion_getflix_db.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
