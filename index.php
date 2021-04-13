@@ -2,7 +2,8 @@
 session_start();
 ?>
 <?php 
-    include '../connexion_getflix_db.php';
+    include "head.php";
+    include 'connexion_getflix_db.php';
 ?>
 <title>Main page</title>
 </head>
