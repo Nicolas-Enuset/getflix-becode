@@ -57,7 +57,7 @@ session_start();
         <!-- films correspondant à la category qui seront display en flex-->
         <article class="action">
         <?php
-        include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
+        include '../connexion_getflix_db.php';
 
         $records = mysqli_query($conn,"select * from getflix_movies where genre_id='878'"); // fetch data from database
         $i = 1;

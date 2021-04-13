@@ -36,7 +36,7 @@ session_start();
                 <input type="password" id="passwordLogin" placeholder="password" class="passwordLogin">
             <button type="submit" id="btnSignIn">Login</button>
         </form>
-        <p id="paragraphNoAccountYet">You don't have an account yet ? <a id="linkToSignUpPage" href="signUp.php">Sign up here.</a> </p>
+        <p id="paragraphNoAccountYet">You don't have an account yet ? <a id="linkToSignUpPage" href="index.php">Sign up here.</a> </p>
     </section>
 
 </article>

@@ -1,6 +1,6 @@
 <?php
 
-include 'C:\xampp\htdocs\projets\PHP\connexion_getflix_db.php';
+include 'connexion_getflix_db.php';
 	
   // Taking all 5 values from the form data(input)
   $movie_title =  $_POST['movie_title'];

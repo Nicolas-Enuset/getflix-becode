@@ -1,6 +1,6 @@
 <?php
 
-include '/Applications/MAMP/htdocs/getflix/connexion_getflix_db.php';
+include 'connexion_getflix_db.php';
 
 $id = $_GET['id']; // get id through query string
 
