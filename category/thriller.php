@@ -124,7 +124,7 @@ session_start();
                      <div class = "modal-footer">
                         <form action="comment_form.php" method="post">
                             <input name="user_comment" type="text">
-                            <input name="movie_id" type="hidden" value="<?php echo $data['id']; ?>">
+                            <input name="movie_id" type="hidden" value="<?php echo $testId; ?>">
                             <button type="submit" class="btn btn-danger button1">Submit</button>
                         </form>
                     </div>

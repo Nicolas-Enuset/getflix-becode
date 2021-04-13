@@ -64,8 +64,8 @@ session_start();
 include '../connexion_getflix_db.php';
 $researched_movie = $_POST['research_movie'];
 
-include 'C:/xampp/htdocs/projets/PHP/connexion_getflix_db.php';
 $records = mysqli_query($conn,"select * from getflix_movies where title like '%$researched_movie%'"); // fetch data from database
+
 $i = 1;
 while($data = mysqli_fetch_array($records))
 {
@@ -119,7 +119,7 @@ while($data = mysqli_fetch_array($records))
                      <div class = "modal-footer">
                         <form action="comment_form.php" method="post">
                             <input name="user_comment" type="text">
-                            <input name="movie_id" type="hidden" value="<?php echo $data['id']; ?>">
+                            <input name="movie_id" type="hidden" value="<?php echo $testId; ?>">
                             <button type="submit" class="btn btn-danger button1">Submit</button>
                         </form>
                     </div>
@@ -136,10 +136,11 @@ while($data = mysqli_fetch_array($records))
 
 
 
-<?php mysqli_close($conn);  // close connection ?>
-</section>
+            <?php mysqli_close($conn);  // close connection ?>
+        </section>
+    </article>
 </article>
-</article>
+
 <!-- footer -->
 <?php 
     include("footer.php")
